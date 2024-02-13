@@ -1,1 +1,1 @@
-##Chord Sequencer
+# Chord Sequencer
