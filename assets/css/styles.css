@@ -4,10 +4,15 @@
         padding: 0;
         box-sizing: border-box;
       }
+
+body {
+    background-color: rgb(163, 145, 145);
+}
       
 h1 {
     text-align: center;
-    color: blue;
+    color: rgb(40, 40, 46);
+    margin-top: 0.3rem;
 }
 
 .main-key {
@@ -22,9 +27,22 @@ h1 {
 }
 
 .mode-boxes {
-    background-color: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    
 }
 
+section > div {
+    Margin: 0.3rem;
+    font-size: 1.5rem;
+    background-color: antiquewhite;
+    padding: 0.4rem;
+    border-radius: 10%;
+    border: 2px solid black;
+}
 
 .chord-boxes {
     background-color: aquamarine;
