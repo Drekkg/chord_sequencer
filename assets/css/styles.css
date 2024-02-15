@@ -6,18 +6,18 @@
       }
 
 body {
-    background-color: rgb(163, 145, 145);
+    background-color: rgb(50, 18, 18);
 }
       
 h1 {
     text-align: center;
-    color: rgb(40, 40, 46);
+    color: rgb(213, 213, 231);
     margin-top: 0.3rem;
 }
 
 .main-key {
     width: 3rem;
-    font-size:2.4rem;
+    font-size:2.8rem;
     margin: 0.5rem auto;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
@@ -37,13 +37,24 @@ h1 {
 
 section > div {
     Margin: 0.3rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     background-color: antiquewhite;
     padding: 0.4rem;
     border-radius: 10%;
     border: 2px solid black;
 }
-
-.chord-boxes {
-    background-color: aquamarine;
+.chord-boxes{
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.chord-boxes > div {
+    Margin: 0.6rem;
+    font-size: 2.2rem;
+    background-color: rgb(87, 147, 76);
+    padding: 0.4rem;
+    border-radius: 10%;
+    border: 2px solid black;
 }
