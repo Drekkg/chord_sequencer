@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chord Sequencer</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="">
   </head>
   <body>
     <h1 class="heading">Chord Sequencer</h1>
-    <div class="main-key">A</div>
+    <div class="main-key">C</div>
 
     <section class="mode-boxes">
-      <div class="mode-box">Ionian</div>
-      <div id="dor">Dorian</div>
-      <div id="phry">Phrygian</div>
-      <div id="lyd">Lydian</div>
-      <div id="mix">Mixolydian</div>
-      <div id="aeo">Aeolian</div>
-      <div id="loc">Locrian</div>
+      <button data-type="ionian" id="ion">Ionian</button>
+      <button data-type="dorian" id="dor">Dorian</button>
+      <button data-type="phrygian" id="phry">Phrygian</button>
+      <button data-type="lydian" id="lyd">Lydian</button>
+      <button data-type="mixolydian" id="mix">Mixolydian</button>
+      <button data-type="aeolian" id="aeo">Aeolian</button>
+      <button data-type="locrian" id="loc">Locrian</button>
     </section>
     <div class="chord-boxes">
       <div id="deg1">Amaj</div>
@@ -28,5 +29,6 @@
       <div id="deg6">F#minor</div>
       <div id="deg7">G#dim</div>
     </div>
+    <script src="assets/css/javascript/scripts.js"></script>
   </body>
 </html>
