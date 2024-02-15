@@ -36,7 +36,7 @@ h1 {
 }
 
 section > div {
-    Margin: 0.3rem;
+    Margin: 0.3rem 0.6rem;
     font-size: 1.7rem;
     background-color: antiquewhite;
     padding: 0.4rem;
@@ -51,7 +51,7 @@ section > div {
     align-items: center;
 }
 .chord-boxes > div {
-    Margin: 0.6rem;
+    Margin: 0.8rem 0.6rem;
     font-size: 2.2rem;
     background-color: rgb(87, 147, 76);
     padding: 0.4rem;
