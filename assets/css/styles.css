@@ -8,12 +8,14 @@
 body {
     background-color: rgb(50, 18, 18);
 }
-      
+   /* header styles */   
 h1 {
     text-align: center;
     color: rgb(213, 213, 231);
     margin-top: 0.3rem;
 }
+
+/* main element styles main key styles */
 #main-key-section {
     display: flex;
 }
@@ -33,7 +35,7 @@ h1 {
     margin: 0.8rem 0;
     
 }
-
+/* scale mode boxes styles */
 .mode-boxes {
     width: 100%;
     display: flex;
@@ -51,6 +53,8 @@ h1 {
     border-radius: 10%;
     border: 2px solid black;
 }
+
+/* Chord shape boxes styles */
 .chord-boxes{
     
     display: flex;
