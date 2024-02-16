@@ -11,6 +11,5 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(modeType);
       });
     }
-    console.log(modeType);
 });
    
