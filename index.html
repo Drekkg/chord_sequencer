@@ -4,31 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chord Sequencer</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="" />
   </head>
   <body>
-    <h1 class="heading">Chord Sequencer</h1>
-    <div id="select-key" class="main-key">C</div>
+    <header>
+      <h1 class="heading">Chord Sequencer</h1>
+    </header>
+    <main>
 
-    <section class="mode-boxes">
-      <button data-type="ionian" id="ion">Ionian</button>
-      <button data-type="dorian" id="dor">Dorian</button>
-      <button data-type="phrygian" id="phry">Phrygian</button>
-      <button data-type="lydian" id="lyd">Lydian</button>
-      <button data-type="mixolydian" id="mix">Mixolydian</button>
-      <button data-type="aeolian" id="aeo">Aeolian</button>
-      <button data-type="locrian" id="loc">Locrian</button>
-    </section>
-    <div class="chord-boxes">
-      <div id="deg1">Amaj</div>
-      <div id="deg2">Bmin</div>
-      <div id="deg3">C#min</div>
-      <div id="deg4">Dmaj</div>
-      <div id="deg5">Edom</div>
-      <div id="deg6">F#minor</div>
-      <div id="deg7">G#dim</div>
-    </div>
+      <section id="main-key-section">
+        <div id="select-key" class="main-key">C</div>
+        <ul>
+        <li>
+        <button>Up</button>
+        </li>
+        <li>
+        <button>Down</button>
+        </li>
+        </ul>
+      </section>
+
+      <section class="mode-boxes">
+        <button data-type="ionian" id="ion">Ionian</button>
+        <button data-type="dorian" id="dor">Dorian</button>
+        <button data-type="phrygian" id="phry">Phrygian</button>
+        <button data-type="lydian" id="lyd">Lydian</button>
+        <button data-type="mixolydian" id="mix">Mixolydian</button>
+        <button data-type="aeolian" id="aeo">Aeolian</button>
+        <button data-type="locrian" id="loc">Locrian</button>
+      </section>
+      <div class="chord-boxes">
+        <div id="deg1">Amaj</div>
+        <div id="deg2">Bmin</div>
+        <div id="deg3">C#min</div>
+        <div id="deg4">Dmaj</div>
+        <div id="deg5">Edom</div>
+        <div id="deg6">F#minor</div>
+        <div id="deg7">G#dim</div>
+      </div>
+    </main>
     <script src="assets/css/javascript/scripts.js"></script>
   </body>
 </html>

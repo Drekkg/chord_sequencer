@@ -14,16 +14,24 @@ h1 {
     color: rgb(213, 213, 231);
     margin-top: 0.3rem;
 }
-
+#main-key-section {
+    display: flex;
+}
 .main-key {
+    display: inline;
     width: 3rem;
     font-size:2.8rem;
-    margin: 0.5rem auto;
+    margin: 0.5rem 0 0.5rem 45%;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
     padding: .3rem;
     text-align: center;
     border-radius: 10%;
+}
+#main-key-section > ul {
+    list-style: none;
+    margin: 0.8rem 0;
+    
 }
 
 .mode-boxes {
@@ -35,7 +43,7 @@ h1 {
     
 }
 
-section > button {
+.mode-boxes > button {
     Margin: 0.3rem 0.6rem;
     font-size: 1.6rem;
     background-color: antiquewhite;
