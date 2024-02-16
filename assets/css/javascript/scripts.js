@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   mainKey();
+  selectKey();
   console.log("loaded");
   let buttons = document.getElementsByTagName("button");
 
@@ -14,34 +15,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+/*Selects the key from an array and displays it on the page.
+The up and down arrows scrolls through the different keys  **/
 function mainKey() {
   let keys = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
   let up = document.getElementById("up-arrow");
   let down = document.getElementById("down-arrow");
   let keyIndex = 0;
   mainKeyDisplay(keys[keyIndex])
-  console.log(keyIndex);
   up.addEventListener("click",() => {
-    if(keyIndex > 10) {
-       keyIndex = 0;
-      mainKeyDisplay(keys[keyIndex]);
-    }else {
-       keyIndex++;
+    keyIndex > 10 ? keyIndex = 0 : keyIndex++;
     mainKeyDisplay(keys[keyIndex]);
-    }
   });
+
   down.addEventListener("click",() => {
-    if(keyIndex < 1){
-    keyIndex = 11;
+    keyIndex < 1 ? keyIndex =  11 : keyIndex--;
     mainKeyDisplay(keys[keyIndex]);
-    }else{
-      keyIndex--;
-      mainKeyDisplay(keys[keyIndex]);
-    }
   });
 }
+
 
 function mainKeyDisplay(val) {
   console.log(val);
   let keyToDisplay = document.getElementById("select-key").textContent = val;
+}
+
+function selectKey() {
+
 }
