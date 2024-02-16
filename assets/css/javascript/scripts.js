@@ -19,13 +19,26 @@ function mainKey() {
   let up = document.getElementById("up-arrow");
   let down = document.getElementById("down-arrow");
   let keyIndex = 0;
-  up.addEventListener("click", function keyArrayUp() {
-    keyIndex++;
+  mainKeyDisplay(keys[keyIndex])
+  console.log(keyIndex);
+  up.addEventListener("click",() => {
+    if(keyIndex > 10) {
+       keyIndex = 0;
+      mainKeyDisplay(keys[keyIndex]);
+    }else {
+       keyIndex++;
     mainKeyDisplay(keys[keyIndex]);
+    }
   });
-  down.addEventListener("click", function keyArrayDown() {
-    keyIndex--;
+  down.addEventListener("click",() => {
+    if(keyIndex < 1){
+    keyIndex = 11;
     mainKeyDisplay(keys[keyIndex]);
+    }else{
+      keyIndex--;
+      mainKeyDisplay(keys[keyIndex]);
+
+    }
   });
 }
 
