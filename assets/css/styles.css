@@ -4,7 +4,9 @@
         padding: 0;
         box-sizing: border-box;
       }
-
+html {
+    border: solid white 2px;
+}
 body {
     background-color: rgb(50, 18, 18);
 }
@@ -21,9 +23,10 @@ h1 {
 }
 .main-key {
     display: inline;
-    width: 3rem;
-    font-size:2.8rem;
-    margin: 0.5rem 0 0.5rem 45%;
+    width: 3.2rem;
+    max-height: 6rem;
+    font-size:3.2rem;
+    margin: 0.5rem 0 0.5rem 42%;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
     padding: .3rem;
@@ -32,9 +35,19 @@ h1 {
 }
 #main-key-section > ul {
     list-style: none;
-    margin: 0.8rem 0;
+   
     
 }
+li {
+    margin: 0.5rem;
+}
+ button > i {
+    font-size: 1.3rem;
+    padding: .3rem;
+  
+ }
+
+
 /* scale mode boxes styles */
 .mode-boxes {
     width: 100%;
@@ -63,7 +76,7 @@ h1 {
     align-items: center;
 }
 .chord-boxes > div {
-    Margin: 0.6rem 0.6rem;
+    Margin: 0.4rem 0.6rem;
     font-size: 2.1rem;
     background-color: rgb(87, 147, 76);
     padding: 0.4rem;
