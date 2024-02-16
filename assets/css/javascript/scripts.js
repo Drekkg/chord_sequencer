@@ -13,3 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
    
+function mainKey () {
+  let keys = ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'b'];
+}
