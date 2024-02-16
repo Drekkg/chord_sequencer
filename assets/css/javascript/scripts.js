@@ -37,7 +37,6 @@ function mainKey() {
     }else{
       keyIndex--;
       mainKeyDisplay(keys[keyIndex]);
-
     }
   });
 }
