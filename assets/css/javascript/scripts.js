@@ -36,10 +36,11 @@ function mainKey() {
 
 
 function mainKeyDisplay(val) {
-  console.log(val);
   let keyToDisplay = document.getElementById("select-key").textContent = val;
+  selectKey();
 }
 
 function selectKey() {
-
+let selectedKey = document.getElementById("select-key").textContent.toLowerCase();
+console.log(selectedKey);
 }
