@@ -290,7 +290,8 @@ const triggerNote = (note) => {
     if (Tone.context.state != "running") {
       Tone.start();
     }
-    synth.triggerAttackRelease(note, "8n");
+    synth.triggerAttackRelease(note, "4n");
+    console.log(note);
     
   }
   
@@ -315,7 +316,7 @@ const notes = {
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
-  dom: [0, 4, 7, 10],
+  dom: [0, 4, 7],
   dim: [0, 3, 6]
 };
 
@@ -331,7 +332,7 @@ let chordButtons = document.querySelectorAll(".chord-button");
   let chordName = button.innerHTML[0].toLowerCase();
   let shapeName = button.innerHTML.toLowerCase().slice(2, 5);
    let chord = notes[chordName];
-   console.log("chord " + chord);
+   
   let shape = shapes[shapeName].map(index => chord[index]);
   button.addEventListener("click", triggerNote(shape)); 
  })
