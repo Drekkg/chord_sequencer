@@ -270,4 +270,11 @@ for(let i = 0; i < modeChords.length; i++) {
 
 
   console.log("filteredModeChords " + filteredModeChords);
+  displayModeChords(filteredModeChords);
+}
+
+function displayModeChords(filteredModeChords) {
+  for(let i = 0; i < filteredModeChords.length; i++) {
+      document.getElementById(`deg${i+1}`).innerHTML = filteredModeChords[i];
+  }
 }
