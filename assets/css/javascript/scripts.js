@@ -2,6 +2,7 @@
  and assign event listeners */
 
 document.addEventListener("DOMContentLoaded", function () {
+  synthesiser()
   mainKey();
   let modeType = "ionian";
   modeTypefilter(modeType);
@@ -55,7 +56,7 @@ function selectKey(modeType, modeName) {
       "a4",
       "a#4",
       "b4",
-      "c5",
+      "c5"
     ],
     cshp: [
       "c#4",
@@ -65,12 +66,12 @@ function selectKey(modeType, modeName) {
       "f4",
       "f#4",
       "g4",
-      "g#4",
+            "g#4",
       "a4",
       "a#4",
       "b4",
       "c5",
-      "c#5",
+      "c#5"
     ],
     d: [
       "d4",
@@ -85,7 +86,7 @@ function selectKey(modeType, modeName) {
       "b4",
       "c5",
       "c#5",
-      "d5",
+      "d5"
     ],
     dshp: [
       "d#4",
@@ -100,7 +101,7 @@ function selectKey(modeType, modeName) {
       "c5",
       "c#5",
       "d5",
-      "d#5",
+      "d#5"
     ],
     e: [
       "e4",
@@ -114,8 +115,8 @@ function selectKey(modeType, modeName) {
       "c5",
       "c#5",
       "d5",
-      "d#5",
-      "e5",
+          "d#5",
+      "e5"
     ],
     f: [
       "f4",
@@ -130,7 +131,7 @@ function selectKey(modeType, modeName) {
       "d5",
       "d#5",
       "e5",
-      "f5",
+      "f5"
     ],
     fshp: [
       "f#4",
@@ -145,7 +146,7 @@ function selectKey(modeType, modeName) {
       "d#5",
       "e5",
       "f5",
-      "f#5",
+      "f#5"
     ],
     g: [
       "g4",
@@ -160,7 +161,7 @@ function selectKey(modeType, modeName) {
       "e5",
       "f5",
       "f#5",
-      "g5",
+      "g5"
     ],
     gshp: [
       "g#4",
@@ -175,7 +176,7 @@ function selectKey(modeType, modeName) {
       "f5",
       "f#5",
       "g5",
-      "g#5",
+      "g#5"
     ],
     a: [
       "a4",
@@ -190,7 +191,7 @@ function selectKey(modeType, modeName) {
       "f#5",
       "g5",
       "g#5",
-      "a5",
+      "a5"
     ],
     ashp: [
       "a#4",
@@ -205,7 +206,7 @@ function selectKey(modeType, modeName) {
       "g5",
       "g#5",
       "a5",
-      "a#5",
+      "a#5"
     ],
     b: [
       "b4",
@@ -220,14 +221,13 @@ function selectKey(modeType, modeName) {
       "g#5",
       "a5",
       "a#5",
-      "b5",
-    ],
+      "b5"
+    ]
   };
   let mainKey = document.getElementById("select-key").textContent.toLowerCase();
   mainKey[1] === "#" ? (mainKey = mainKey[0] + "shp") : mainKey;
   let selectedKey = notes[mainKey];
   filterScale(selectedKey, modeType, modeName);
- 
 }
 
 function modeTypefilter(modeType) {
@@ -238,19 +238,17 @@ function modeTypefilter(modeType) {
     lydian: [0, 2, 4, 6, 7, 9, 11],
     mixolydian: [0, 2, 4, 5, 7, 9, 10],
     aeolian: [0, 2, 3, 5, 7, 8, 10],
-    locrian: [0, 1, 3, 5, 6, 8, 10],
+    locrian: [0, 1, 3, 5, 6, 8, 10]
   };
   let modeName;
   modeType != null ? (modeName = modeType) : (modeName = "ionian");
   modeType != null
-    ? (modeType = modes[modeType])
-    : (modeType = modes["ionian"]);
+    ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
   selectKey(modeType, modeName);
 }
 
 function filterScale(scale, mode, modeName) {
   let modeChords = mode.map((index) => scale[index]);
-
 
   let modeNameObj = {
     ionian: ["maj", "min", "min", "maj", "dom", "min", "dim"],
@@ -259,22 +257,77 @@ function filterScale(scale, mode, modeName) {
     lydian: ["maj", "dom", "min", "dim", "maj", "min", "min"],
     mixolydian: ["dom", "min", "dim", "maj", "min", "min", "maj"],
     aeolian: ["min", "dim", "maj", "min", "min", "maj", "dom"],
-    locrian: ["dim", "maj", "min", "min", "maj", "dom", "min"],
+    locrian: ["dim", "maj", "min", "min", "maj", "dom", "min"]
   };
   let modeNameToFilter = modeNameObj[modeName];
 
   let filteredModeChords = [];
-for(let i = 0; i < modeChords.length; i++) {
+  for (let i = 0; i < modeChords.length; i++) {
     filteredModeChords.push(modeChords[i] + modeNameToFilter[i]);
- }
-
+  }
 
   console.log("filteredModeChords " + filteredModeChords);
   displayModeChords(filteredModeChords);
 }
 
 function displayModeChords(filteredModeChords) {
-  for(let i = 0; i < filteredModeChords.length; i++) {
-      document.getElementById(`deg${i+1}`).innerHTML = filteredModeChords[i];
+  for (let i = 0; i < filteredModeChords.length; i++) {
+    document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i];
   }
+}
+/*Tone JS Tone generator **/
+function synthesiser (){
+const synth = new Tone.PolySynth();
+const reverb = new Tone.Reverb();
+synth.connect(reverb);
+reverb.toDestination();
+
+
+// const synth = new Tone.Synth().toDestination();
+
+const triggerNote = (note) => {
+  return () => {
+    if (Tone.context.state != "running") {
+      Tone.start();
+    }
+    synth.triggerAttackRelease(note, "8n");
+    
+  }
+}
+
+
+const notes = {
+  c: ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
+  cshp: ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
+  d: ['d4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5'],
+  dshp: ['d#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5'],
+  e: ['e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5'],
+  f: ['f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5'],
+  fshp: ['f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5'],
+  g: ['g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5'],
+  gshp: ['g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5'],
+  a: ['a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5'],
+  ashp: ['a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5'],
+  b: ['b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5', 'b5']
+};
+
+const shapes = {
+  maj: [0, 4, 7],
+  min: [0, 3, 7],
+  dom: [0, 4, 7, 10],
+  dim: [0, 3, 6]
+};
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  let chordName = button.innerHTML[0].toLowerCase();
+  let shapeName = button.innerHTML.toLowerCase().slice(1, 4);
+  
+
+  let chord = notes[chordName];
+  console.log("chord " + chord);
+  let shape = shapes[shapeName].map(index => chord[index]);
+  button.addEventListener("click", triggerNote(shape)); 
+});
 }
