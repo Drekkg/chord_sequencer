@@ -67,6 +67,12 @@ li {
     border-radius: 10%;
     border: 2px solid black;
 }
+.mode-boxes > button:hover {
+    background-color: rgb(153, 105, 43);
+}
+.mode-boxes > button:active {
+    background-color: rgb(99, 31, 112);
+}
 
 /* Chord shape boxes styles */
 .chord-boxes{
