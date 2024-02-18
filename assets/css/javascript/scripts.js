@@ -2,14 +2,13 @@
  and assign event listeners */
 
 document.addEventListener("DOMContentLoaded", function () {
-  synthesiser()
   mainKey();
-  let modeType = "ionian";
-  modeTypefilter(modeType);
-  let buttons = document.getElementsByTagName("button");
+  // let modeType = "ionian";
+  // modeTypefilter(modeType);
 
+  let buttons = document.getElementsByClassName("mode-button");
   for (let button of buttons) {
-    button.addEventListener("focus", function () {
+    button.addEventListener("click", function () {
       modeType = this.getAttribute("data-type");
       modeTypefilter(modeType);
     });
@@ -242,8 +241,7 @@ function modeTypefilter(modeType) {
   };
   let modeName;
   modeType != null ? (modeName = modeType) : (modeName = "ionian");
-  modeType != null
-    ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
+  modeType != null ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
   selectKey(modeType, modeName);
 }
 
@@ -266,7 +264,6 @@ function filterScale(scale, mode, modeName) {
     filteredModeChords.push(modeChords[i] + modeNameToFilter[i]);
   }
 
-  console.log("filteredModeChords " + filteredModeChords);
   displayModeChords(filteredModeChords);
 }
 
@@ -274,9 +271,12 @@ function displayModeChords(filteredModeChords) {
   for (let i = 0; i < filteredModeChords.length; i++) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i];
   }
+  synthesiser();
 }
+
 /*Tone JS Tone generator **/
 function synthesiser (){
+
 const synth = new Tone.PolySynth();
 const reverb = new Tone.Reverb();
 synth.connect(reverb);
@@ -286,13 +286,14 @@ reverb.toDestination();
 // const synth = new Tone.Synth().toDestination();
 
 const triggerNote = (note) => {
-  return () => {
+   return () => {
     if (Tone.context.state != "running") {
       Tone.start();
     }
     synth.triggerAttackRelease(note, "8n");
     
   }
+  
 }
 
 
@@ -318,16 +319,26 @@ const shapes = {
   dim: [0, 3, 6]
 };
 
-const buttons = document.querySelectorAll('button');
+let chordButtons = document.querySelectorAll(".chord-button");
+// for (let button of chordButtons) {
+//   button.addEventListener("focus", function () {
+//     modeType = this.getAttribute("data-type");
+//     modeTypefilter(modeType);
+//   });
+// }
 
-buttons.forEach((button) => {
+ chordButtons.forEach((button) => {
   let chordName = button.innerHTML[0].toLowerCase();
-  let shapeName = button.innerHTML.toLowerCase().slice(1, 4);
-  
-
-  let chord = notes[chordName];
-  console.log("chord " + chord);
+  let shapeName = button.innerHTML.toLowerCase().slice(2, 5);
+   let chord = notes[chordName];
+   console.log("chord " + chord);
   let shape = shapes[shapeName].map(index => chord[index]);
   button.addEventListener("click", triggerNote(shape)); 
-});
+ })
+// 
+// let chord = document.getElementById("deg1");
+// chord.addEventListener("click", triggerNote(["c5", "c6", "e4"]));
+
+
+
 }

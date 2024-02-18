@@ -82,7 +82,7 @@ li {
     flex-wrap: wrap;
     align-items: center;
 }
-.chord-boxes > div {
+.chord-boxes > button {
     Margin: 0.4rem 0.6rem;
     font-size: 2.1rem;
     background-color: rgb(87, 147, 76);
