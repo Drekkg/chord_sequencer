@@ -107,12 +107,11 @@ function displayModeChords(filteredModeChords) {
   console.log("filteredModeChords" + filteredModeChords)
   chordTone();
 }
-
+let shape = [];
 /*Tone JS Tone generator **/
 function getShape(val){
-let chordShape = val;
-console.log(chordShape);
-return chordShape;
+
+
 }
 function pop(){
 const synth = new Tone.PolySynth();
@@ -120,11 +119,11 @@ const reverb = new Tone.Reverb();
 synth.connect(reverb);
 reverb.toDestination();
 
-
+console.log(shape);
 
 let chordButtons = document.querySelectorAll(".chord-button");
 chordButtons.forEach((button) => {
-  button.addEventListener("click", triggerNote(shape));
+  button.addEventListener("click",  triggerNote(shape));
  
 })
 
@@ -174,8 +173,9 @@ chordButtons.forEach((button) => {
   let chordName = button.innerHTML[0].toLowerCase();
   let shapeName = button.innerHTML.toLowerCase().slice(3, 6);
   let chord = notes[chordName];
-  let shape = shapes[shapeName].map(index => chord[index]);
-  getShape(shape)
+  shape.push(shapes[shapeName].map(index => chord[index]));
+  console.log(shape);
+  return shape;
 })
 
 
