@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   mainKey();
+  pop();
   // let modeType = "ionian";
   // modeTypefilter(modeType);
 
@@ -42,186 +43,18 @@ function mainKeyDisplay(mainKeyValue) {
 /*Selects the appropriate scale according to the main Key selected **/
 function selectKey(modeType, modeName) {
   const notes = {
-    c: [
-      "c4",
-      "c#4",
-      "d4",
-      "d#4",
-      "e4",
-      "f4",
-      "f#4",
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5"
-    ],
-    cshp: [
-      "c#4",
-      "d4",
-      "d#4",
-      "e4",
-      "f4",
-      "f#4",
-      "g4",
-            "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5"
-    ],
-    d: [
-      "d4",
-      "d#4",
-      "e4",
-      "f4",
-      "f#4",
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5"
-    ],
-    dshp: [
-      "d#4",
-      "e4",
-      "f4",
-      "f#4",
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5"
-    ],
-    e: [
-      "e4",
-      "f4",
-      "f#4",
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-          "d#5",
-      "e5"
-    ],
-    f: [
-      "f4",
-      "f#4",
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5"
-    ],
-    fshp: [
-      "f#4",
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5",
-      "f#5"
-    ],
-    g: [
-      "g4",
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5",
-      "f#5",
-      "g5"
-    ],
-    gshp: [
-      "g#4",
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5",
-      "f#5",
-      "g5",
-      "g#5"
-    ],
-    a: [
-      "a4",
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5",
-      "f#5",
-      "g5",
-      "g#5",
-      "a5"
-    ],
-    ashp: [
-      "a#4",
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5",
-      "f#5",
-      "g5",
-      "g#5",
-      "a5",
-      "a#5"
-    ],
-    b: [
-      "b4",
-      "c5",
-      "c#5",
-      "d5",
-      "d#5",
-      "e5",
-      "f5",
-      "f#5",
-      "g5",
-      "g#5",
-      "a5",
-      "a#5",
-      "b5"
-    ]
+    c: ['c-4', 'c#4', 'd-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5'],
+  cshp: ['c#4', 'd-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5'],
+  d: ['d-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5'],
+  dshp: ['d#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5'],
+  e: ['e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5'],
+  f: ['f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5'],
+  fshp: ['f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5'],
+  g: ['g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5'],
+  gshp: ['g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5'],
+  a: ['a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5'],
+  ashp: ['a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5'],
+  b: ['b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5', 'b-5']
   };
   let mainKey = document.getElementById("select-key").textContent.toLowerCase();
   mainKey[1] === "#" ? (mainKey = mainKey[0] + "shp") : mainKey;
@@ -271,33 +104,48 @@ function displayModeChords(filteredModeChords) {
   for (let i = 0; i < filteredModeChords.length; i++) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i];
   }
-  synthesiser();
+  console.log("filteredModeChords" + filteredModeChords)
+  chordTone();
 }
 
 /*Tone JS Tone generator **/
-function synthesiser (){
-
+function getShape(val){
+let chordShape = val;
+console.log(chordShape);
+return chordShape;
+}
+function pop(){
 const synth = new Tone.PolySynth();
 const reverb = new Tone.Reverb();
 synth.connect(reverb);
 reverb.toDestination();
 
 
+
+let chordButtons = document.querySelectorAll(".chord-button");
+chordButtons.forEach((button) => {
+  button.addEventListener("click", triggerNote(shape));
+ 
+})
+
+
 // const synth = new Tone.Synth().toDestination();
 
-const triggerNote = (note) => {
+function triggerNote(note) {
    return () => {
     if (Tone.context.state != "running") {
       Tone.start();
     }
-    synth.triggerAttackRelease(note, "4n");
-    console.log(note);
+    
+    synth.triggerAttackRelease(note, "4n")
+    
     
   }
   
 }
 
-
+}
+function chordTone() {
 const notes = {
   c: ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
   cshp: ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
@@ -321,25 +169,38 @@ const shapes = {
 };
 
 let chordButtons = document.querySelectorAll(".chord-button");
-// for (let button of chordButtons) {
-//   button.addEventListener("focus", function () {
-//     modeType = this.getAttribute("data-type");
-//     modeTypefilter(modeType);
-//   });
-// }
 
- chordButtons.forEach((button) => {
+chordButtons.forEach((button) => {
   let chordName = button.innerHTML[0].toLowerCase();
-  let shapeName = button.innerHTML.toLowerCase().slice(2, 5);
-   let chord = notes[chordName];
-   
+  let shapeName = button.innerHTML.toLowerCase().slice(3, 6);
+  let chord = notes[chordName];
   let shape = shapes[shapeName].map(index => chord[index]);
-  button.addEventListener("click", triggerNote(shape)); 
- })
+  getShape(shape)
+})
+
+
+
+}
+
 // 
 // let chord = document.getElementById("deg1");
 // chord.addEventListener("click", triggerNote(["c5", "c6", "e4"]));
 
 
 
-}
+
+
+
+
+// c: ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
+// cshp: ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
+// d: ['d4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5'],
+// dshp: ['d#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5'],
+// e: ['e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5'],
+// f: ['f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5'],
+// fshp: ['f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5'],
+// g: ['g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5'],
+// gshp: ['g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5'],
+// a: ['a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5'],
+// ashp: ['a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5'],
+// b: ['b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5', 'b5']
