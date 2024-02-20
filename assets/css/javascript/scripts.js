@@ -3,7 +3,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   mainKey();
-  pop();
+  synth();
+  
   // let modeType = "ionian";
   // modeTypefilter(modeType);
 
@@ -105,46 +106,39 @@ function displayModeChords(filteredModeChords) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i];
   }
   console.log("filteredModeChords" + filteredModeChords)
-  chordTone();
+  
 }
-let shape = [];
+
 /*Tone JS Tone generator **/
-function getShape(val){
 
-
-}
-function pop(){
+function synth(){
 const synth = new Tone.PolySynth();
 const reverb = new Tone.Reverb();
 synth.connect(reverb);
 reverb.toDestination();
 
-console.log(shape);
 
-let chordButtons = document.querySelectorAll(".chord-button");
-chordButtons.forEach((button) => {
-  button.addEventListener("click",  triggerNote(shape));
- 
-})
+let chordIds = ['deg1', 'deg2', 'deg3', 'deg4', 'deg5', 'deg6', 'deg7'];
+chordIds.forEach(id => { 
+  let chord = document.getElementById(id);
+  chord.addEventListener("click", () => {
+    createChord(chord);
+  });
+});
 
-
-// const synth = new Tone.Synth().toDestination();
 
 function triggerNote(note) {
-   return () => {
-    if (Tone.context.state != "running") {
+
+   if (Tone.context.state != "running") {
       Tone.start();
     }
-    
+    console.log(note)
     synth.triggerAttackRelease(note, "4n")
-    
-    
-  }
   
 }
 
-}
-function chordTone() {
+
+// function chordTone() {
 const notes = {
   c: ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
   cshp: ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
@@ -167,24 +161,24 @@ const shapes = {
   dim: [0, 3, 6]
 };
 
-let chordButtons = document.querySelectorAll(".chord-button");
 
-chordButtons.forEach((button) => {
+
+
+function createChord(button) {
+
   let chordName = button.innerHTML[0].toLowerCase();
   let shapeName = button.innerHTML.toLowerCase().slice(3, 6);
   let chord = notes[chordName];
-  shape.push(shapes[shapeName].map(index => chord[index]));
-  console.log(shape);
-  return shape;
-})
+  let shape = shapes[shapeName].map(index => chord[index]);
+  
 
+  triggerNote(shape);
+  
+}
 
 
 }
 
-// 
-// let chord = document.getElementById("deg1");
-// chord.addEventListener("click", triggerNote(["c5", "c6", "e4"]));
 
 
 
