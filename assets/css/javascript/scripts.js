@@ -138,7 +138,6 @@ function triggerNote(note) {
 }
 
 
-// function chordTone() {
 const notes = {
   c: ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
   cshp: ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
@@ -153,7 +152,7 @@ const notes = {
   ashp: ['a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5'],
   b: ['b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5', 'b5']
 };
-
+ 
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
@@ -165,8 +164,10 @@ const shapes = {
 
 
 function createChord(button) {
+  let chordName = button.innerHTML.toLowerCase().slice(0, 3);
+  chordName[1] === "#" ? (chordName = chordName[0]  += "shp") : chordName = chordName[0];
+  console.log(chordName[2])
 
-  let chordName = button.innerHTML[0].toLowerCase();
   let shapeName = button.innerHTML.toLowerCase().slice(3, 6);
   let chord = notes[chordName];
   let shape = shapes[shapeName].map(index => chord[index]);
