@@ -50,7 +50,7 @@ li {
 
 
 /* scale mode boxes styles */
-.mode-boxes {
+#mode-boxes {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -59,7 +59,8 @@ li {
     
 }
 
-.mode-boxes > button {
+
+.mode-button {
     Margin: 0.3rem 0.6rem;
     font-size: 1.6rem;
     background-color: antiquewhite;
@@ -67,11 +68,13 @@ li {
     border-radius: 10%;
     border: 2px solid black;
 }
-.mode-boxes > button:hover {
-    background-color: rgb(153, 105, 43);
+.selected {
+    background-color: rgb(121, 115, 119);
 }
-.mode-boxes > button:active {
-    background-color: rgb(99, 31, 112);
+
+
+.mode-boxes > button:hover {
+    background-color: rgb(153, 114, 43);
 }
 
 /* Chord shape boxes styles */

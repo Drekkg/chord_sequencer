@@ -13,9 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       modeType = this.getAttribute("data-type");
       modeTypefilter(modeType);
+     
     });
   }
 });
+
+  
+
 
 /*Selects the key from an array and displays the key  on the page.
 The up and down arrows scrolls through the different keys  **/
@@ -77,7 +81,29 @@ function modeTypefilter(modeType) {
   modeType != null ? (modeName = modeType) : (modeName = "ionian");
   modeType != null ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
   selectKey(modeType, modeName);
+  selectedButtonColor(modeName);
+
 }
+function selectedButtonColor(modeName) {
+  let buttons = document.getElementsByClassName("mode-button");
+  // for(removeButton of buttons){
+  //   removeButton.classList.remove("selected");
+  // };
+
+  
+  for (let button of buttons) {
+  button.addEventListener("click", function () {
+    for(removeButton of buttons){
+      removeButton.classList.remove("selected");
+    }
+    this.classList.add("selected");
+    }
+   ); 
+  }
+}
+
+
+
 
 function filterScale(scale, mode, modeName) {
   let modeChords = mode.map((index) => scale[index]);
@@ -105,7 +131,7 @@ function displayModeChords(filteredModeChords) {
   for (let i = 0; i < filteredModeChords.length; i++) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i];
   }
-  console.log("filteredModeChords" + filteredModeChords)
+ 
   
 }
 
@@ -132,7 +158,7 @@ function triggerNote(note) {
    if (Tone.context.state != "running") {
       Tone.start();
     }
-    console.log(note)
+   
     synth.triggerAttackRelease(note, "4n")
   
 }
@@ -162,7 +188,7 @@ const notes = {
   'g5shp': ['g#5', 'a5', 'a#5', 'b5', 'c6', 'c#6', 'd6', 'd#6', 'e6', 'f6', 'f#6', 'g6', 'g#6'],
   'a-5': ['a5', 'a#5', 'b5', 'c6', 'c#6', 'd6', 'd#6', 'e6', 'f6', 'f#6', 'g6', 'g#6', 'a6'],
   'a5shp': ['a#5', 'b5', 'c6', 'c#6', 'd6', 'd#6', 'e6', 'f6', 'f#6', 'g6', 'g#6', 'a6', 'a#6'],
-  'b-5': ['b5', 'c6', 'c#6', 'd6', 'd#6', 'e6', 'f6', 'f#6', 'g6', 'g#6', 'a6', 'a#6', 'b6'],
+  'b-5': ['b5', 'c6', 'c#6', 'd6', 'd#6', 'e6', 'f6', 'f#6', 'g6', 'g#6', 'a6', 'a#6', 'b6']
   
 };
  
@@ -181,7 +207,7 @@ function createChord(button) {
   chordName[1] === '#' ? (chordName = chordName += 'shp') : chordName;
   // chordName[2] === '5' ? (chordName = chordName + '5') : chordName;
   chordName[1] === '#' ? (chordName = chordName[0] + chordName.slice(2, 8)) : chordName;
-  console.log(chordName) 
+  
   
 
   let shapeName = button.innerHTML.toLowerCase().slice(3, 6);
