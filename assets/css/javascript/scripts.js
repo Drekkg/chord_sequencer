@@ -169,7 +169,7 @@ const notes = {
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
-  dom: [0, 4, 7],
+  dom: [0, 4, 7, 10],
   dim: [0, 3, 6]
 };
 
