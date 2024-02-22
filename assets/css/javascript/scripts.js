@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   mainKey();
+  noteLength();
   synth();
   
   // let modeType = "ionian";
@@ -18,8 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-  
-
+  /*Selects the note length from an array and displays the note length on the page.**/
+  function noteLength() {
+    const noteLengthArray = ["1/1", "1/2", "1/4", "1/16"];
+   let noteLengthSelected = document.getElementById("select-note-length")
+   noteLengthSelected.textContent = noteLengthArray[2];
+   noteLengthSelected.addEventListener("click", () => {
+    let noteLengthIndex = noteLengthArray.indexOf(noteLengthSelected.textContent);
+    noteLengthIndex < 3 ? noteLengthIndex++ : noteLengthIndex = 0;
+    noteLengthSelected.textContent = noteLengthArray[noteLengthIndex];
+   });
+  }
 
 /*Selects the key from an array and displays the key  on the page.
 The up and down arrows scrolls through the different keys  **/

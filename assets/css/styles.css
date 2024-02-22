@@ -27,11 +27,11 @@ h1 {
     width: 2rem;
     max-height: 1.8rem;
     font-size:1rem;
-    margin: 1.6rem 0 0.5rem 12%;
+    margin: 2.3rem 0 0.5rem 30%;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
-    padding: .5rem;
-   
+    padding-top: .2rem;
+    text-align: center;
     border-radius: 10%;
 }
 
