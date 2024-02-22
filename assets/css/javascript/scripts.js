@@ -157,12 +157,18 @@ chordIds.forEach(id => {
 
 
 function triggerNote(note) {
+  let noteLengthObject = {
+    "1/1": "1n",  
+    "1/2": "2n",
+    "1/4": "4n",
+    "1/16": "16n"
+  }
 
    if (Tone.context.state != "running") {
       Tone.start();
     }
    
-    synth.triggerAttackRelease(note, "2n")
+    synth.triggerAttackRelease(note, noteLengthObject[document.getElementById("select-note-length").textContent]);
   
 }
 
