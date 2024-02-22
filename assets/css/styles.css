@@ -24,10 +24,10 @@ h1 {
 /*note length styles */
 .note-length {
     display: inline;
-    width: 2rem;
+    width: 2.2rem;
     max-height: 1.8rem;
     font-size:1rem;
-    margin: 2.3rem 0 0.5rem 30%;
+    margin: 2.3rem 0 0.5rem 20%;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
     padding-top: .2rem;

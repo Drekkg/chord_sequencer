@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const noteLengthArray = ["1/1", "1/2", "1/4", "1/16"];
    let noteLengthSelected = document.getElementById("select-note-length")
    noteLengthSelected.textContent = noteLengthArray[2];
+   
    noteLengthSelected.addEventListener("click", () => {
     let noteLengthIndex = noteLengthArray.indexOf(noteLengthSelected.textContent);
     noteLengthIndex < 3 ? noteLengthIndex++ : noteLengthIndex = 0;
@@ -163,12 +164,12 @@ function triggerNote(note) {
     "1/4": "4n",
     "1/16": "16n"
   }
-
+ let selectedNoteLengthtoPlay = noteLengthObject[document.getElementById("select-note-length").textContent]
    if (Tone.context.state != "running") {
       Tone.start();
     }
    
-    synth.triggerAttackRelease(note, noteLengthObject[document.getElementById("select-note-length").textContent]);
+    synth.triggerAttackRelease(note, selectedNoteLengthtoPlay);
   
 }
 
