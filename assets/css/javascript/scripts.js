@@ -152,7 +152,7 @@ function triggerNote(note) {
       Tone.start();
     }
    
-    synth.triggerAttackRelease(note, "4n")
+    synth.triggerAttackRelease(note, "2n")
   
 }
 

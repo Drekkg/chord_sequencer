@@ -21,12 +21,26 @@ h1 {
 #main-key-section {
     display: flex;
 }
+/*note length styles */
+.note-length {
+    display: inline;
+    width: 2rem;
+    max-height: 1.8rem;
+    font-size:1rem;
+    margin: 1.6rem 0 0.5rem 12%;
+    background-color: rgb(215, 210, 210);
+    border: 2px solid black;
+    padding: .5rem;
+   
+    border-radius: 10%;
+}
+
 .main-key {
     display: inline;
     width: 5rem;
     max-height: 5.8rem;
     font-size:3.2rem;
-    margin: 0.5rem 0 0.5rem 38%;
+    margin: 0.5rem 0 0.5rem 1rem;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
     padding: .5rem;
