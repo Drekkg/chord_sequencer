@@ -39,14 +39,14 @@ h2, h3 {
     font-family: "Space Mono", monospace;
     font-size: 1.3rem;
     text-align: center;
-    color: rgb(46, 4, 4);
+    color: rgb(191, 205, 217);
     margin-top: 0.2rem;
 }
 p {
     font-family: "Space Mono", monospace;
     font-size: 0.8rem;
     text-align: center;
-    color: rgb(46, 4, 4);
+    color: rgb(191, 212, 220);
     margin-top: 0.2rem;
 }
 
@@ -68,7 +68,7 @@ hr {
     width: 2.2rem;
     max-height: 1.8rem;
     font-size:1rem;
-    margin: 2.3rem 0 0.5rem 20%;
+    margin: 2.3rem 0 0rem 20%;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
     padding-top: .2rem;
@@ -124,12 +124,12 @@ li {
     border: 2px solid black;
 }
 .selected {
-    background-color: rgb(121, 115, 119);
+    background-color: rgb(153, 114, 43);
 }
 
 
 .mode-button:hover {
-    background-color: rgb(153, 114, 43);
+    background-color: rgb(153, 128, 80);
 }
 
 /* Chord shape boxes styles */
@@ -153,4 +153,16 @@ li {
 }
 .chord-boxes > button:active{
     background-color: rgb(12, 207, 214);
+}
+
+@media screen and (min-width: 600px) {
+    
+    body {
+        max-width: 35rem;
+        margin: 0 auto;
+        
+    }
+    * {
+        font-size: 2rem;
+    }
 }
