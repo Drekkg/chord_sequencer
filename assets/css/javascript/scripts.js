@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
      
     });
   }
+let closeModal = document.getElementById("close-modal");
+closeModal.addEventListener("click", () => {  
+  document.getElementById("modal").style.display = "none";
+  
+});
+
+
+
 });
 
   /*Selects the note length from an array and displays the note length on the page.**/

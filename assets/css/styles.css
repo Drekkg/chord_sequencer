@@ -4,27 +4,57 @@
         padding: 0;
         box-sizing: border-box;
       }
-html {
-    border: solid white 2px;
-}
+
+
 body {/*Ultimate css generator*/
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
 background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
     background-color: rgb(39, 32, 32);
 }
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(241, 225, 225, 0.925);
+    padding-top: 60px;
+}
+
+
    /* header styles */   
 h1 {
     font-family: "Space Mono", monospace;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
     color: rgb(213, 213, 231);
     margin-top: 0.2rem;
 }
+h2 h3 {
+    font-family: "Space Mono", monospace;
+    font-size: 1.3rem;
+    text-align: center;
+    color: rgb(46, 4, 4);
+    margin-top: 0.2rem;
+}
+p {
+    font-family: "Space Mono", monospace;
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgb(46, 4, 4);
+    margin-top: 0.2rem;
+}
+
+
 hr {
     width: 80%;
-    margin-left: 2rem;
-    border: solid 1px rgba(143, 134, 107, 0.267);
+    margin: 0.5rem 2rem;
+    border: solid 1px rgba(100, 98, 90, 0.493);
 }
 
 
@@ -51,7 +81,7 @@ hr {
     width: 5rem;
     max-height: 5.8rem;
     font-size:3.2rem;
-    margin: 0.5rem 0 0.5rem 1rem;
+    margin: 0.3rem 0 0.5rem 1rem;
     background-color: rgb(215, 210, 210);
     border: 2px solid black;
     padding: .2rem .5rem;
@@ -104,15 +134,15 @@ li {
 
 /* Chord shape boxes styles */
 .chord-boxes{
-    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
 }
 .chord-boxes > button {
-    Margin: 0.3rem 0.5rem;
-    font-size: 1.5rem;
+    
+    Margin: 0.5rem 0.5rem;
+    font-size: 1.8rem;
     background-color: rgb(87, 147, 76);
     padding: 0.3rem;
     border-radius: 10%;
