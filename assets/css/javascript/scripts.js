@@ -86,19 +86,12 @@ function modeTypefilter(modeType) {
 }
 function selectedButtonColor(modeName) {
   let buttons = document.getElementsByClassName("mode-button");
-  // for(removeButton of buttons){
-  //   removeButton.classList.remove("selected");
-  // };
-
   
   for (let button of buttons) {
-  button.addEventListener("click", function () {
-    for(removeButton of buttons){
-      removeButton.classList.remove("selected");
-    }
-    this.classList.add("selected");
-    }
-   ); 
+    button.classList.remove("selected");
+    if(button.getAttribute("data-type") === modeName){
+      button.classList.add("selected");
+    }; 
   }
 }
 
@@ -195,7 +188,7 @@ const notes = {
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
-  dom: [0, 4, 7, 10],
+  dom: [0, 4, 7,],
   dim: [0, 3, 6]
 };
 

@@ -73,7 +73,7 @@ li {
 }
 
 
-.mode-boxes > button:hover {
+.mode-button:hover {
     background-color: rgb(153, 114, 43);
 }
 
@@ -92,4 +92,10 @@ li {
     padding: 0.4rem;
     border-radius: 10%;
     border: 2px solid black;
+}
+.chord-boxes > button:hover {
+    background-color: rgb(216, 204, 32);
+}
+.chord-boxes > button:active{
+    background-color: rgb(12, 207, 214);
 }
