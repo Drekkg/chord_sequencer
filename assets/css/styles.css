@@ -22,7 +22,7 @@ background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a
     height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0);
-    background-color: rgba(241, 225, 225, 0.925);
+    background-color: rgb(87, 93, 105);
     padding-top: 60px;
 }
 
@@ -35,7 +35,7 @@ h1 {
     color: rgb(213, 213, 231);
     margin-top: 0.2rem;
 }
-h2 h3 {
+h2, h3 {
     font-family: "Space Mono", monospace;
     font-size: 1.3rem;
     text-align: center;
