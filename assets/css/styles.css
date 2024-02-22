@@ -4,7 +4,9 @@
         padding: 0;
         box-sizing: border-box;
       }
-
+html {
+    background-color: rgb(39, 32, 32);
+}
 
 body {/*Ultimate css generator*/
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
@@ -160,6 +162,8 @@ li {
     body {
         max-width: 35rem;
         margin: 0 auto;
+        border-radius: 2%;
+       
         
     }
     * {
