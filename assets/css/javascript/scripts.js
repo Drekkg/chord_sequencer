@@ -133,7 +133,7 @@ function filterScale(scale, mode, modeName) {
 
 function displayModeChords(filteredModeChords) {
   for (let i = 0; i < filteredModeChords.length; i++) {
-    document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i];
+    document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i].toUpperCase();
   }
  
   
