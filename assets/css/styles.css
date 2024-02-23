@@ -150,6 +150,25 @@ li {
     border-radius: 10%;
     border: 2px solid black;
 }
+button.maj{
+    background-color: rgb(87, 147, 76);
+}
+ button.min{
+    background-color: rgb(76, 85, 147);
+}
+button.dim{
+    background-color: rgb(147, 76, 76);
+}
+button.dom{
+    background-color: rgb(76, 136, 147);
+}
+
+.chord-boxes > button:hover {
+    background-color: rgb(216, 204, 32);
+}
+.chord-boxes > button:active{
+    background-color: rgb(12, 207, 214);
+}
 .chord-boxes > button:hover {
     background-color: rgb(216, 204, 32);
 }
