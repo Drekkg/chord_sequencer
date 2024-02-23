@@ -11,8 +11,8 @@ html {
 body {/*Ultimate css generator*/
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
 background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-    background-color: rgb(39, 32, 32);
+background-color: rgb(39, 32, 32);
+height: 100vh;
 }
 .modal {
     display: block;
@@ -89,6 +89,7 @@ hr {
     padding: .2rem .5rem;
     text-align: center;
     border-radius: 10%;
+    align-self: center;
 }
 #main-key-section > ul {
     list-style: none;
