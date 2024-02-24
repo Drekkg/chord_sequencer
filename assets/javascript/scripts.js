@@ -16,15 +16,29 @@ document.addEventListener("DOMContentLoaded", function () {
       const chordSequencerMode = modeType;
       localStorage.setItem('chord_sequencer_mode', JSON.stringify(chordSequencerMode));
       modeTypefilter(modeType);
-      
-
     });
   }
+if(JSON.parse(localStorage.getItem('stopShowing'))) {
+  document.getElementById("modal").style.display = "none";
+}
+
+
 let closeModal = document.getElementById("close-modal");
 closeModal.addEventListener("click", () => {  
   document.getElementById("modal").style.display = "none";
-  
+})
+  let openModal = document.getElementById("open-modal");
+    openModal.addEventListener("click", () => {
+        document.getElementById("modal").style.display = "block";
+    });
+
+let stopShowing = document.getElementById("stop-showing-modal");
+stopShowing.addEventListener("click", () => {
+document.getElementById("modal").style.display = "none";
+localStorage.setItem("stopShowing", true);
 });
+  
+
 
 
 
@@ -240,7 +254,7 @@ const notes = {
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
-  dom: [0, 4, 7,],
+  dom: [0, 4, 7, 10],
   dim: [0, 3, 6]
 };
 
@@ -259,7 +273,6 @@ function createChord(button) {
   let chord = notes[chordName];
   let shape = shapes[shapeName].map(index => chord[index]);
   
-
   triggerNote(shape);
   
 }
