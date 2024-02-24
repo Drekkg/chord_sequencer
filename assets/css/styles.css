@@ -6,9 +6,11 @@
       }
 html {
     background-color: rgb(39, 32, 32);
+    
 }
 
-body {/*Ultimate css generator*/
+body {
+    /*Ultimate css generator*/
 background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); 
 background-color: rgb(39, 32, 32);
 height: 100vh;
@@ -192,11 +194,13 @@ button.dom{
     body {
         max-width: 35rem;
         margin: 0 auto;
-        border-radius: 2%;
-       
-        
+        border-radius: 2%;   
     }
-    * {
-        font-size: 2rem;
-    }
+
+   html {
+     font-size: 2rem;
+}
+  .note-length {
+      margin: 2.3rem 0 0rem 20%;
+}
 }
