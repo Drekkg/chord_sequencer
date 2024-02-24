@@ -13,8 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let button of buttons) {
     button.addEventListener("click", function () {
       modeType = this.getAttribute("data-type");
+      const chordSequencerMode = modeType;
+      localStorage.setItem('chord_sequencer_mode', JSON.stringify(chordSequencerMode));
       modeTypefilter(modeType);
-     
+      
+
     });
   }
 let closeModal = document.getElementById("close-modal");
@@ -30,13 +33,22 @@ closeModal.addEventListener("click", () => {
   /*Selects the note length from an array and displays the note length on the page.**/
   function noteLength() {
     const noteLengthArray = ["1/1", "1/2", "1/4", "1/16"];
-   let noteLengthSelected = document.getElementById("select-note-length")
+   let noteLengthSelected = document.getElementById("select-note-length");
    noteLengthSelected.textContent = noteLengthArray[2];
+    /* read noteLength from localStorage  chord_sequencer_note */
+    if (localStorage.getItem('chord_sequencer_note')) {
+      const noteLength = JSON.parse(localStorage.getItem('chord_sequencer_note'));
+      noteLengthSelected.textContent = noteLength;
+      noteLengthSelected.value=noteLength;
+  }
+   
    
    noteLengthSelected.addEventListener("click", () => {
     let noteLengthIndex = noteLengthArray.indexOf(noteLengthSelected.textContent);
     noteLengthIndex < 3 ? noteLengthIndex++ : noteLengthIndex = 0;
     noteLengthSelected.textContent = noteLengthArray[noteLengthIndex];
+    const chord_sequencer_note = noteLengthArray[noteLengthIndex];
+   localStorage.setItem('chord_sequencer_note', JSON.stringify(chord_sequencer_note));
    });
   }
 
@@ -47,6 +59,11 @@ function mainKey() {
   let up = document.getElementById("up-arrow");
   let down = document.getElementById("down-arrow");
   let keyIndex = 0;
+  /* read mainKey from localStorage  chord_sequencer_key */
+  if (localStorage.getItem('chord_sequencer_key')) {
+    const key = JSON.parse(localStorage.getItem('chord_sequencer_key'));
+    keyIndex = keys.indexOf(key);
+  }
   mainKeyDisplay(keys[keyIndex]);
   up.addEventListener("click", () => {
     keyIndex > 10 ? (keyIndex = 0) : keyIndex++;
@@ -62,6 +79,7 @@ function mainKey() {
 /*Gets the main key from the box  **/
 function mainKeyDisplay(mainKeyValue) {
   document.getElementById("select-key").textContent = mainKeyValue;
+  const mainKeyChordSequencer = localStorage.setItem('chord_sequencer_key', JSON.stringify(mainKeyValue));
   modeTypefilter();
 }
 /*Selects the appropriate scale according to the main Key selected **/
@@ -99,8 +117,16 @@ function modeTypefilter(modeType) {
   let modeName;
   modeType != null ? (modeName = modeType) : (modeName = "ionian");
   modeType != null ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
-  selectKey(modeType, modeName);
-  selectedButtonColor(modeName);
+
+   /* read nodeType from localStorage  chord_sequencer_node */
+   if (localStorage.getItem('chord_sequencer_mode')) {
+    modeName = JSON.parse(localStorage.getItem('chord_sequencer_mode'));
+    modeType = modes[modeName];
+    selectKey(modeType, modeName);
+}
+selectedButtonColor(modeName);
+selectKey(modeType, modeName);
+  
 
 }
 function selectedButtonColor(modeName) {
@@ -143,7 +169,6 @@ function displayModeChords(filteredModeChords, modeNameToFilter) {
   for (let i = 0; i < filteredModeChords.length; i++) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i].toUpperCase();
     document.getElementById(`deg${i + 1}`).classList = `button ${modeNameToFilter[i]}`;
-    console.log(modeNameToFilter[i])
   }
  
   
