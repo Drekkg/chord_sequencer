@@ -101,6 +101,30 @@ button#open-modal {
     align-self: center;
     border: solid black 0.1rem;
 }
+/* No JS message*/
+.js-message {
+    z-index: 2;
+    text-align: left;
+    background: rgb(19, 50, 95);
+    color: rgb(255, 255, 255);
+    display: block;
+}
+.js-message p {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+    padding: 12px;
+}
+.js-message a {
+    color: rgb(175, 178, 241);
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+}
+
+
+
    /* header styles */   
 h1 {
     font-family: "Space Mono", monospace;
