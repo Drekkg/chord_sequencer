@@ -11,8 +11,8 @@ html {
 
 body {
     /*Ultimate css generator*/
-background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); 
-background-color: rgb(39, 32, 32);
+/* background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);  */
+background-color: rgba(242, 242, 242, 0.794);
 height: 100vh;
 box-shadow: 0 0 0.5rem rgba(117, 115, 115, 0.5);
 }
@@ -92,14 +92,17 @@ box-shadow: 0 0 0.5rem rgba(117, 115, 115, 0.5);
 
   header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
-button#open-modal {
+
+button#open-modal {   
     font-size: .8rem;
     width: 1rem;
     height: 1rem;
     align-self: center;
     border: solid black 0.1rem;
+    margin-left: 10%;
+    box-shadow:  0 0 0;
 }
 /* No JS message*/
 .js-message {
@@ -129,9 +132,10 @@ button#open-modal {
 h1 {
     font-family: "Space Mono", monospace;
     font-size: 1.6rem;
-    text-align: center;
-    color: rgb(213, 213, 231);
+    
+    color: #2b2d42;
     margin-top: 0.2rem;
+   
 }
 h2, h3 {
     font-family: "Space Mono", monospace;
@@ -153,7 +157,7 @@ p {
 hr {
     width: 80%;
     margin: 0.5rem 2rem;
-    border: solid 1px rgba(100, 98, 90, 0.493);
+    border: solid 1px rgba(47, 47, 45, 0.665);
 }
 
 
@@ -168,11 +172,12 @@ hr {
     max-height: 1.8rem;
     font-size:1rem;
     margin: 2.3rem 0 0rem 20%;
-    background-color: rgb(215, 210, 210);
+    background-color: #edf2f4;
     border: 2px solid black;
     padding-top: .2rem;
     text-align: center;
     border-radius: 20%;
+    box-shadow: 3px .3rem 0rem rgba(7, 6, 6, 0.5);
 }
 
 .main-key {
@@ -181,13 +186,13 @@ hr {
     max-height: 5.8rem;
     font-size:3.2rem;
     margin: 0.3rem 0 0.5rem 1rem;
-    background-color: rgb(215, 210, 210);
+    background-color: #edf2f4;
     border: 2px solid black;
     padding: .2rem .5rem;
     text-align: center;
     border-radius: 10%;
     align-self: center;
-    box-shadow: 0 0 0.5rem rgba(117, 115, 115, 0.5);
+    box-shadow: 3px .3rem 0rem rgba(7, 6, 6, 0.5);
 }
 #main-key-section > ul {
     list-style: none;
@@ -201,6 +206,8 @@ button {
    border-radius: 15%;
     border: 2px solid black;
     align-self: center;
+    background-color: #edf2f4;
+    box-shadow: 3px .3rem 0rem rgba(7, 6, 6, 0.5);
    
 }
 
@@ -226,19 +233,20 @@ button {
 .mode-button {
     Margin: 0.3rem 0.6rem;
     font-size: 1.4rem;
-    background-color: antiquewhite;
+    background-color: #edf2f4;
     padding: 0.4rem;
     border-radius: 10%;
     border: 0.1rem solid black;
-    box-shadow: 3px 0 0.5rem rgba(7, 6, 6, 0.5);
+    box-shadow: 3px .3rem 0rem rgba(7, 6, 6, 0.5);
 }
 .selected {
-    background-color: rgb(153, 114, 43);
+    background-color: #6A4C93;
+    color: #f2f2f2;
 }
 
 
 .mode-button:hover {
-    background-color: rgb(153, 128, 80);
+    background-color: #6A4C93;
 }
 
 /* Chord shape boxes styles */
@@ -258,57 +266,24 @@ button {
     border: .1rem solid black;
 }
 button.maj{
-    background-color: rgb(87, 147, 76);
+    background-color:#8AC926;
 }
  button.min{
-    background-color: rgb(76, 85, 147);
+    background-color: #1982C4;
 }
 button.dim{
-    background-color: rgb(147, 76, 76);
+    background-color: #FF595E;
 }
 button.dom{
     background-color: rgb(76, 136, 147);
 }
 
 .chord-boxes > button:hover {
-    background-color: rgb(216, 204, 32);
+    background-color: #FFCA3A;
 }
-.chord-boxes > button:active{
-    background-color: rgb(12, 207, 214);
-}
-.chord-boxes > button:hover {
-    background-color: rgb(216, 204, 32);
-}
-.chord-boxes > button:active{
-    background-color: rgb(12, 207, 214);
-}
-
 
 
 /* media queries */
-
-
-@media screen and (min-width: 600px) {
-    
-    body {
-        max-width: 35rem;
-        margin: 0 auto;
-        border-radius: 2%;   
-    }
-
-   html {
-     font-size: 1.3rem;
-}
-  .note-length {
-      margin: 2.1rem 0 0rem 30%;
-}
-.rules-item{
-    grid-template-columns: 100px calc(100% - 100px);
-}
-}
- 
-
-
 
 
 @media screen and (min-width: 318px) {
@@ -353,7 +328,25 @@ button.dom{
   #chord-boxes {
     margin-top: 2rem;
   }
+  @media screen and (min-width: 600px) {
+    
+    body {
+        max-width: 35rem;
+        margin: 0 auto;
+        border-radius: 2%;   
+    }
 
+   html {
+     font-size: 1.3rem;
+}
+  .note-length {
+      margin: 2.1rem 0 0rem 30%;
+}
+.rules-item{
+    grid-template-columns: 100px calc(100% - 100px);
+}
+}
+ 
 
 @media screen and (min-width: 1024px) {
     
@@ -371,3 +364,4 @@ button.dom{
  
 
 
+ 
