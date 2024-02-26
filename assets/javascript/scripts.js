@@ -183,6 +183,7 @@ function displayModeChords(filteredModeChords, modeNameToFilter) {
   for (let i = 0; i < filteredModeChords.length; i++) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i].toUpperCase();
     document.getElementById(`deg${i + 1}`).classList = `button ${modeNameToFilter[i]}`;
+   
   }
  
   
