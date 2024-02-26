@@ -161,13 +161,13 @@ function filterScale(scale, mode, modeName) {
   let modeChords = mode.map((index) => scale[index]);
 
   let modeNameObj = {
-    ionian: ["maj", "min", "min", "maj", "dom", "min", "dim"],
+    ionian: ["maj", "min", "min", "maj", "maj", "min", "dim"],
     dorian: ["min", "min", "maj", "maj", "min", "dim", "maj"],
-    phrygian: ["min", "maj", "dom", "min", "dim", "maj", "min"],
-    lydian: ["maj", "dom", "min", "dim", "maj", "min", "min"],
-    mixolydian: ["dom", "min", "dim", "maj", "min", "min", "maj"],
-    aeolian: ["min", "dim", "maj", "min", "min", "maj", "dom"],
-    locrian: ["dim", "maj", "min", "min", "maj", "dom", "min"]
+    phrygian: ["min", "maj", "maj", "min", "dim", "maj", "min"],
+    lydian: ["maj", "maj", "min", "dim", "maj", "min", "min"],
+    mixolydian: ["maj", "min", "dim", "maj", "min", "min", "maj"],
+    aeolian: ["min", "dim", "maj", "min", "min", "maj", "maj"],
+    locrian: ["dim", "maj", "min", "min", "maj", "maj", "min"]
   };
   let modeNameToFilter = modeNameObj[modeName];
 
@@ -254,7 +254,7 @@ const notes = {
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
-  dom: [0, 4, 7, 10],
+  dom: [0, 4, 7],
   dim: [0, 3, 6]
 };
 
