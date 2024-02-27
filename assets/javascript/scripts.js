@@ -40,6 +40,7 @@ closeModal.addEventListener("click", () => {
         document.getElementById("modal").style.display = "block";
     });
 
+/*stops the modal from showing on load */
 let stopShowing = document.getElementById("stop-showing-modal");
 stopShowing.addEventListener("click", () => {
 document.getElementById("modal").style.display = "none";
@@ -57,6 +58,7 @@ localStorage.setItem("stopShowing", true);
     const noteLengthArray = ["1/1", "1/2", "1/4", "1/16"];
    let noteLengthSelected = document.getElementById("select-note-length");
    noteLengthSelected.textContent = noteLengthArray[2];
+
     /* read noteLength from localStorage  chord_sequencer_note */
     if (localStorage.getItem('chord_sequencer_note')) {
       const noteLength = JSON.parse(localStorage.getItem('chord_sequencer_note'));
@@ -64,12 +66,14 @@ localStorage.setItem("stopShowing", true);
       noteLengthSelected.value=noteLength;
   }
    
-   
+   /*adds event listener to the note length button and changes the note length on click */
    noteLengthSelected.addEventListener("click", () => {
     let noteLengthIndex = noteLengthArray.indexOf(noteLengthSelected.textContent);
     noteLengthIndex < 3 ? noteLengthIndex++ : noteLengthIndex = 0;
     noteLengthSelected.textContent = noteLengthArray[noteLengthIndex];
     const chord_sequencer_note = noteLengthArray[noteLengthIndex];
+    
+/*set selected note to localStorage */
    localStorage.setItem('chord_sequencer_note', JSON.stringify(chord_sequencer_note));
    });
   }
