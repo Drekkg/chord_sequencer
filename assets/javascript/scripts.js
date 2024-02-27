@@ -72,7 +72,7 @@ localStorage.setItem("stopShowing", true);
     noteLengthIndex < 3 ? noteLengthIndex++ : noteLengthIndex = 0;
     noteLengthSelected.textContent = noteLengthArray[noteLengthIndex];
     const chord_sequencer_note = noteLengthArray[noteLengthIndex];
-    
+
 /*set selected note to localStorage */
    localStorage.setItem('chord_sequencer_note', JSON.stringify(chord_sequencer_note));
    });
@@ -85,51 +85,34 @@ function mainKey() {
   let up = document.getElementById("up-arrow");
   let down = document.getElementById("down-arrow");
   let keyIndex = 0;
+
   /* read mainKey from localStorage  chord_sequencer_key */
   if (localStorage.getItem('chord_sequencer_key')) {
     const key = JSON.parse(localStorage.getItem('chord_sequencer_key'));
     keyIndex = keys.indexOf(key);
   }
+  /*up arrow event listener */
   mainKeyDisplay(keys[keyIndex]);
   up.addEventListener("click", () => {
     keyIndex > 10 ? (keyIndex = 0) : keyIndex++;
     mainKeyDisplay(keys[keyIndex]);
   });
-
+/*down arrow event listener */
   down.addEventListener("click", () => {
     keyIndex < 1 ? (keyIndex = 11) : keyIndex--;
     mainKeyDisplay(keys[keyIndex]);
   });
 }
 
-/*Gets the main key from the box  **/
+/*Gets the main key from mainKey function and displays it on the page  **/
 function mainKeyDisplay(mainKeyValue) {
   document.getElementById("select-key").textContent = mainKeyValue;
-  const mainKeyChordSequencer = localStorage.setItem('chord_sequencer_key', JSON.stringify(mainKeyValue));
+
+  /*set selected key to localStorage */
+  localStorage.setItem('chord_sequencer_key', JSON.stringify(mainKeyValue));
   modeTypefilter();
 }
-/*Selects the appropriate scale according to the main Key selected **/
-function selectKey(modeType, modeName) {
-  const notes = {
-    c: ['c-4', 'c#4', 'd-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5'],
-  cshp: ['c#4', 'd-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5'],
-  d: ['d-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5'],
-  dshp: ['d#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5'],
-  e: ['e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5'],
-  f: ['f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5'],
-  fshp: ['f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5'],
-  g: ['g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5'],
-  gshp: ['g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5'],
-  a: ['a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5'],
-  ashp: ['a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5'],
-  b: ['b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5', 'b-5']
-  };
-  let mainKey = document.getElementById("select-key").textContent.toLowerCase();
-  mainKey[1] === "#" ? (mainKey = mainKey[0] + "shp") : mainKey;
-  let selectedKey = notes[mainKey];
-  filterScale(selectedKey, modeType, modeName);
-}
-
+/*selects the dinotes for the mode type and displays the mode type on the page **/
 function modeTypefilter(modeType) {
   let modes = {
     ionian: [0, 2, 4, 5, 7, 9, 11],
@@ -152,9 +135,33 @@ function modeTypefilter(modeType) {
 }
 selectedButtonColor(modeName);
 selectKey(modeType, modeName);
-  
-
 }
+
+
+/*Selects the appropriate scale according to the main Key selected **/
+function selectKey(modeType, modeName) {
+  const notes = {
+    c: ['c-4', 'c#4', 'd-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5'],
+  cshp: ['c#4', 'd-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5'],
+  d: ['d-4', 'd#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5'],
+  dshp: ['d#4', 'e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5'],
+  e: ['e-4', 'f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5'],
+  f: ['f-4', 'f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5'],
+  fshp: ['f#4', 'g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5'],
+  g: ['g-4', 'g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5'],
+  gshp: ['g#4', 'a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5'],
+  a: ['a-4', 'a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5'],
+  ashp: ['a#4', 'b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5'],
+  b: ['b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5', 'b-5']
+  };
+  let mainKey = document.getElementById("select-key").textContent.toLowerCase();
+  mainKey[1] === "#" ? (mainKey = mainKey[0] + "shp") : mainKey;
+  let selectedKey = notes[mainKey];
+  filterScale(selectedKey, modeType, modeName);
+}
+
+
+
 function selectedButtonColor(modeName) {
   let buttons = document.getElementsByClassName("mode-button");
   
