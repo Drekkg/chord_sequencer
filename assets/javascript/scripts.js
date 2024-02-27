@@ -1,32 +1,40 @@
-/* After DOM has loaded run a for loop on all the buttons
- and assign event listeners */
+
+/*jshint esversion: 6 */ 
+/* After DOM has loaded run a for loop and assign event listeners to all the mode buttons.
+Call the mainKey to display the main key on the page.
+Call the noteLength to display the note length on the page.
+call the synth function to get it loaded and ready to play.
+ */
 
 document.addEventListener("DOMContentLoaded", function () {
   mainKey();
   noteLength();
   synth();
-  
-  // let modeType = "ionian";
-  // modeTypefilter(modeType);
 
+  /*The assign eventListener for loop  */
   let buttons = document.getElementsByClassName("mode-button");
   for (let button of buttons) {
     button.addEventListener("click", function () {
       modeType = this.getAttribute("data-type");
+
+      /*set selected mode to localStorage */
       const chordSequencerMode = modeType;
       localStorage.setItem('chord_sequencer_mode', JSON.stringify(chordSequencerMode));
       modeTypefilter(modeType);
     });
   }
+  /*Checks local storage to see if the stop showing button was clicked - if true modal stops showing on load */
 if(JSON.parse(localStorage.getItem('stopShowing'))) {
   document.getElementById("modal").style.display = "none";
 }
 
-
+/*closes the instructional modal */
 let closeModal = document.getElementById("close-modal");
 closeModal.addEventListener("click", () => {  
   document.getElementById("modal").style.display = "none";
 })
+
+/*opens the instructional modal */
   let openModal = document.getElementById("open-modal");
     openModal.addEventListener("click", () => {
         document.getElementById("modal").style.display = "block";

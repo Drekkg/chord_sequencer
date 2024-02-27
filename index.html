@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chord Sequencer</title>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -11,17 +11,16 @@
   <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <h1 class="heading">Chord Sequencer</h1>
     <button id="open-modal" class="modal-button rule-number">?</button>
-  </header>
   </header>
   <div class="modal" id="modal">
     <!-- enable javascript message -->
@@ -38,7 +37,6 @@
       <br>
       <h2>Chord Sequencer</h2>
       <h3>Instructions</h3>
-
       <div class="rules-list">
         <div class="rules-item">
           <div class="rule-number">1</div>
@@ -85,7 +83,7 @@
   <main>
     <hr>
     <h5>Main key</h5>
-    <section id="main-key-section">
+    <div id="main-key-section">
       <div id="select-note-length" class="note-length"></div>
       <div id="select-key" class="main-key"></div>
       <ul>
@@ -96,10 +94,10 @@
           <button><i id="down-arrow" class="fa-solid fa-arrow-down"></i></button>
         </li>
       </ul>
-    </section>
+    </div>
     <hr>
     <h5>Modes</h5>
-    <section id="mode-boxes">
+    <div id="mode-boxes">
       <button class="mode-button" data-type="ionian">Ionian</button>
       <button class="mode-button" data-type="dorian">Dorian</button>
       <button class="mode-button" data-type="phrygian">Phrygian</button>
@@ -107,7 +105,7 @@
       <button class="mode-button" data-type="mixolydian">Mixolydian</button>
       <button class="mode-button" data-type="aeolian">Aeolian</button>
       <button class="mode-button" data-type="locrian">Locrian</button>
-    </section>
+    </div>
     <hr>
     <h5>Chord Sequence</h5>
     <div class="chord-boxes">

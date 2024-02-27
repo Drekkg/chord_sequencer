@@ -14,7 +14,7 @@ body {
     /*Ultimate css generator*/
 /* background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);  */
 background-color: #96a4a8;
-height: 100vh;
+min-height: 100vh;
 box-shadow: 0 0 0.5rem rgba(184, 146, 146, 0.5);
 }
 .modal {
@@ -266,7 +266,7 @@ button {
 }
 .chord-boxes > button {
     width: 7.5rem;
-    Margin: 0.7rem 0.6rem;
+    Margin: 3rem 0.6rem;
     font-size: 1.8rem;
     background-color: rgb(87, 147, 76);
     padding: 0.3rem;
@@ -314,6 +314,10 @@ button.dom{
             .note-length {
                 margin: 2.6rem 0 0rem 30%;
           }
+          h1 {
+          font-size: 2.5rem;
+        margin-top: 0.5rem;
+    }
     
         }
 
@@ -333,13 +337,17 @@ button.dom{
 
 #mode-boxes {
     margin: 1rem 0;
-    color: pink;
+  
   }
   #chord-boxes {
     margin-top: 1.5rem;
   }
-}
 
+.stop-showing {
+    font-size: 1rem;
+}
+    
+}
 
 @media screen and (min-width: 1024px) {
     
