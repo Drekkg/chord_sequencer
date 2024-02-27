@@ -123,6 +123,7 @@ function modeTypefilter(modeType) {
     aeolian: [0, 2, 3, 5, 7, 8, 10],
     locrian: [0, 1, 3, 5, 6, 8, 10]
   };
+  /*if modeType is null set modeType to ionian */
   let modeName;
   modeType != null ? (modeName = modeType) : (modeName = "ionian");
   modeType != null ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
@@ -161,7 +162,7 @@ function selectKey(modeType, modeName) {
 }
 
 
-
+/*Changes the color of the selected mode button **/
 function selectedButtonColor(modeName) {
   let buttons = document.getElementsByClassName("mode-button");
   
@@ -175,8 +176,10 @@ function selectedButtonColor(modeName) {
 
 
 
-
+/*Filters the scale according to the mode selected **/
 function filterScale(scale, mode, modeName) {
+  /*the map method filters the scale according to the mode selected
+  it removes the notes that are not in the given mode **/
   let modeChords = mode.map((index) => scale[index]);
 
   let modeNameObj = {
@@ -189,7 +192,7 @@ function filterScale(scale, mode, modeName) {
     locrian: ["dim", "maj", "min", "min", "maj", "maj", "min"]
   };
   let modeNameToFilter = modeNameObj[modeName];
-
+/*adds maj, min, dim to the modeChords **/
   let filteredModeChords = [];
   for (let i = 0; i < modeChords.length; i++) {
     filteredModeChords.push(modeChords[i] + modeNameToFilter[i]);
@@ -197,7 +200,7 @@ function filterScale(scale, mode, modeName) {
 
   displayModeChords(filteredModeChords, modeNameToFilter);
 }
-
+/*Displays the mode chords on the page **/
 function displayModeChords(filteredModeChords, modeNameToFilter) {
   for (let i = 0; i < filteredModeChords.length; i++) {
     document.getElementById(`deg${i + 1}`).innerHTML = filteredModeChords[i].toUpperCase();
@@ -208,8 +211,9 @@ function displayModeChords(filteredModeChords, modeNameToFilter) {
   
 }
 
-/*Tone JS Tone generator **/
 
+/*Tone JS Tone generator **/
+/*The synth function creates the synth and reverb and connects them to the destination i.e speakers.*/
 function synth(){
 const synth = new Tone.PolySynth();
 const reverb = new Tone.Reverb();
@@ -306,16 +310,3 @@ function createChord(button) {
 
 
 
-
-// c: ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
-// cshp: ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
-// d: ['d4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5'],
-// dshp: ['d#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5'],
-// e: ['e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5'],
-// f: ['f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5'],
-// fshp: ['f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5'],
-// g: ['g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5'],
-// gshp: ['g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5'],
-// a: ['a4', 'a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5'],
-// ashp: ['a#4', 'b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5'],
-// b: ['b4', 'c5', 'c#5', 'd5', 'd#5', 'e5', 'f5', 'f#5', 'g5', 'g#5', 'a5', 'a#5', 'b5']
