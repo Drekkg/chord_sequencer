@@ -194,7 +194,7 @@ hr {
     margin: 0.3rem 0 0.5rem 1rem;
     background-color: #edf2f4;
     border: 2px solid black;
-    padding: .4rem .5rem;
+    padding: .4rem .5rem 0 .4rem;
     text-align: center;
     border-radius: 10%;
     align-self: center;
