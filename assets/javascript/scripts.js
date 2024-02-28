@@ -229,7 +229,9 @@ chordIds.forEach(id => {
   });
 });
 
-
+/* gets chord and shape from create chord function
+get the note length from the notelength HTML 
+and triggers the sound */
 function triggerNote(note) {
   let noteLengthObject = {
     "1/1": "1n",  
@@ -246,7 +248,7 @@ function triggerNote(note) {
   
 }
 
-
+/*An object containing the arrays that will map to the correct notes to be played  */
 const notes = {
   'c-4': ['c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5'],
   'c4shp': ['c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4', 'a4', 'a#4', 'b4', 'c5', 'c#5'],
@@ -275,6 +277,8 @@ const notes = {
   
 };
  
+
+/*An object containing the arrays that will map to the correct shape of the chords to be played */
 const shapes = {
   maj: [0, 4, 7],
   min: [0, 3, 7],
@@ -284,11 +288,12 @@ const shapes = {
 
 
 
-
+/*Gets the chord name and shape from the clicked button
+gets rif of the # and adds the chord shape 
+sends the chord and shape to be triggered to the triggerNote function  */
 function createChord(button) {
   let chordName = button.innerHTML.toLowerCase().slice(0, 3);
   chordName[1] === '#' ? (chordName = chordName += 'shp') : chordName;
-  // chordName[2] === '5' ? (chordName = chordName + '5') : chordName;
   chordName[1] === '#' ? (chordName = chordName[0] + chordName.slice(2, 8)) : chordName;
   
   
