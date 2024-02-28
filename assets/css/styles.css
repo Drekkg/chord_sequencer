@@ -98,9 +98,11 @@ box-shadow: 0 0 0.5rem rgba(184, 146, 146, 0.5);
       margin-left: 10%;
       box-shadow:  0 0 0;
   }
+li {
+    list-style: none;
+}
 
-
-/* No JS message adds styles to the no js message*/
+/* No JS message adds styles to the no js message*/ 
 .js-message {
     z-index: 2;
     text-align: left;
