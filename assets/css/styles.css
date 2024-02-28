@@ -239,7 +239,7 @@ button {
 
 .mode-button {
     Margin: 0.3rem 0.6rem .6rem 0.6rem;
-    font-size: 1.4rem;
+    font-size: 1rem;
     background-color: #edf2f4;
     padding: 0.4rem;
     border-radius: 10%;
@@ -266,7 +266,7 @@ button {
 }
 .chord-boxes > button {
     width: 7.5rem;
-    Margin: 3rem 0.6rem;
+    Margin: .6rem 0.4rem;
     font-size: 1.8rem;
     background-color: rgb(87, 147, 76);
     padding: 0.3rem;
@@ -299,6 +299,9 @@ button.dom{
     .chord-boxes > button {
         width: 8rem;
        margin: 1rem 0.7rem;
+    }
+    .mode-button {
+        font-size: 1.3rem;
     }
 }
 
