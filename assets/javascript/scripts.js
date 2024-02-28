@@ -1,10 +1,9 @@
 /*jshint esversion: 6 */
-/* After DOM has loaded run a for loop and assign event listeners to all the mode buttons.
+/* After the  DOM has loaded, runs a for loop and assigns event listeners to all the mode buttons.
 Call the mainKey to display the main key on the page.
 Call the noteLength to display the note length on the page.
 call the synth function to get it loaded and ready to play.
  */
-
 document.addEventListener("DOMContentLoaded", function () {
   mainKey();
   noteLength();

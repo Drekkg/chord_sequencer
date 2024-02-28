@@ -10,13 +10,13 @@ html {
     
 }
 
+/* add basic styles to the body
+   full height  */
 body {
-    /*Ultimate css generator*/
-/* background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);  */
-background-color: #96a4a8;
 min-height: 100vh;
 box-shadow: 0 0 0.5rem rgba(184, 146, 146, 0.5);
 }
+/*adds the instructional modal on load */
 .modal {
     display: block;
     position: fixed;
@@ -89,22 +89,18 @@ box-shadow: 0 0 0.5rem rgba(184, 146, 146, 0.5);
       justify-content: center;
       align-items: center;
   }
+  button#open-modal {   
+      font-size: .8rem;
+      width: 1rem;
+      height: 1rem;
+      align-self: center;
+      border: solid black 0.1rem;
+      margin-left: 10%;
+      box-shadow:  0 0 0;
+  }
 
-  header {
-    display: flex;
-    justify-content: center;
-}
 
-button#open-modal {   
-    font-size: .8rem;
-    width: 1rem;
-    height: 1rem;
-    align-self: center;
-    border: solid black 0.1rem;
-    margin-left: 10%;
-    box-shadow:  0 0 0;
-}
-/* No JS message*/
+/* No JS message adds styles to the no js message*/
 .js-message {
     z-index: 2;
     text-align: left;
@@ -129,6 +125,13 @@ button#open-modal {
 
 
    /* header styles */   
+   /* adds styles for the header*/
+
+  header {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
    
     font-size: 1.6rem;
@@ -186,6 +189,7 @@ hr {
     
 }
 
+/* styles for the main kex box*/
 .main-key {
     display: inline;
     width: 5.5rem;
@@ -201,6 +205,8 @@ hr {
     box-shadow: 3px .3rem 0rem rgba(7, 6, 6, 0.5);
     margin-bottom: 1rem;
 }
+
+/* styles for the arrows*/
 #main-key-section > ul {
     list-style: none;
    
@@ -335,8 +341,7 @@ button.dom{
    html {
      font-size: 1.2rem;
 }
-  /* .note-length {
-      margin: 2.1rem 0 0rem 30%; */
+  
 
 #mode-boxes {
     margin: 1rem 0;
