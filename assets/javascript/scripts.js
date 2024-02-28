@@ -129,7 +129,7 @@ function modeTypefilter(modeType) {
   /*if modeType is null set modeType to ionian */
   let modeName;
   if(modeType != null) { modeName = modeType;} else {modeName = "ionian";}
-  if(modeType != null) { modeType = modes[modeType]} else {modeType = modes["ionian"];}
+  if(modeType != null) { modeType = modes[modeType];} else {modeType = modes.ionian;}
 
    /* read nodeType from localStorage  chord_sequencer_node */
    if (localStorage.getItem('chord_sequencer_mode')) {
@@ -159,7 +159,7 @@ function selectKey(modeType, modeName) {
   b: ['b-4', 'c-5', 'c#5', 'd-5', 'd#5', 'e-5', 'f-5', 'f#5', 'g-5', 'g#5', 'a-5', 'a#5', 'b-5']
   };
   let mainKey = document.getElementById("select-key").textContent.toLowerCase();
-  mainKey[1] === "#" ? (mainKey = mainKey[0] + "shp") : mainKey;
+  if(mainKey[1] === "#") {mainKey = mainKey[0] + "shp";} else {mainKey = mainKey;}
   let selectedKey = notes[mainKey];
   filterScale(selectedKey, modeType, modeName);
 }
@@ -279,8 +279,8 @@ gets rif of the # and adds the chord shape
 sends the chord and shape to be triggered to the triggerNote function  */
 function createChord(button) {
   let chordName = button.innerHTML.toLowerCase().slice(0, 3);
-  chordName[1] === '#' ? (chordName = chordName += 'shp') : chordName;
-  chordName[1] === '#' ? (chordName = chordName[0] + chordName.slice(2, 8)) : chordName;
+  if(chordName[1] === '#') {chordName = chordName += 'shp';} else {chordName = chordName;}
+  if(chordName[1] === '#') {chordName = chordName[0] + chordName.slice(2, 8);} else {chordName = chordName;}
   
   
 
