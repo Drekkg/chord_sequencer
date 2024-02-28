@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       modeTypefilter(modeType);
     });
   }
-  /*Checks local storage to see if the stop showing button was clicked - if true modal stops showing on load */
+  /*Checks local storage to see if the stop showing button was clicked - if true, modal stops showing on load */
   if (JSON.parse(localStorage.getItem("stopShowing"))) {
     document.getElementById("modal").style.display = "none";
   }
