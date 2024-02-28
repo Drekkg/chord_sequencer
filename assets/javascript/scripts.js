@@ -95,12 +95,14 @@ function mainKey() {
   /*up arrow event listener */
   mainKeyDisplay(keys[keyIndex]);
   up.addEventListener("click", () => {
-    keyIndex > 10 ? (keyIndex = 0) : keyIndex++;
+    if(keyIndex > 10) {keyIndex = 0;} else  {keyIndex++;}
+
+
     mainKeyDisplay(keys[keyIndex]);
   });
 /*down arrow event listener */
   down.addEventListener("click", () => {
-    keyIndex < 1 ? (keyIndex = 11) : keyIndex--;
+   if(keyIndex < 1) {(keyIndex = 11);} else {keyIndex--;}
     mainKeyDisplay(keys[keyIndex]);
   });
 }
@@ -126,8 +128,8 @@ function modeTypefilter(modeType) {
   };
   /*if modeType is null set modeType to ionian */
   let modeName;
-  modeType != null ? (modeName = modeType) : (modeName = "ionian");
-  modeType != null ? (modeType = modes[modeType]) : (modeType = modes["ionian"]);
+  if(modeType != null) { modeName = modeType;} else {modeName = "ionian";}
+  if(modeType != null) { modeType = modes[modeType]} else {modeType = modes["ionian"];}
 
    /* read nodeType from localStorage  chord_sequencer_node */
    if (localStorage.getItem('chord_sequencer_mode')) {
