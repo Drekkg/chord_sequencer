@@ -70,7 +70,7 @@ localStorage.setItem("stopShowing", true);
    /*adds event listener to the note length button and changes the note length on click */
    noteLengthSelected.addEventListener("click", () => {
     let noteLengthIndex = noteLengthArray.indexOf(noteLengthSelected.textContent);
-    noteLengthIndex < 3 ? noteLengthIndex++ : noteLengthIndex = 0;
+    if(noteLengthIndex < 3) { noteLengthIndex++;} else { noteLengthIndex = 0;}
     noteLengthSelected.textContent = noteLengthArray[noteLengthIndex];
     const chord_sequencer_note = noteLengthArray[noteLengthIndex];
 
@@ -171,7 +171,7 @@ function selectedButtonColor(modeName) {
     button.classList.remove("selected");
     if(button.getAttribute("data-type") === modeName){
       button.classList.add("selected");
-    }; 
+    }
   }
 }
 
@@ -299,8 +299,8 @@ function triggerNote(note) {
     "1/2": "2n",
     "1/4": "4n",
     "1/16": "16n"
-  }
- let selectedNoteLengthtoPlay = noteLengthObject[document.getElementById("select-note-length").textContent]
+  };
+ let selectedNoteLengthtoPlay = noteLengthObject[document.getElementById("select-note-length").textContent];
    if (Tone.context.state != "running") {
       Tone.start();
     }
