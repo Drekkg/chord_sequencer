@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   synth();
 
   /*The assign eventListener for loop  */
+  let modeType;
   let buttons = document.getElementsByClassName("mode-button");
   for (let button of buttons) {
     button.addEventListener("click", function () {
@@ -32,7 +33,7 @@ if(JSON.parse(localStorage.getItem('stopShowing'))) {
 let closeModal = document.getElementById("close-modal");
 closeModal.addEventListener("click", () => {  
   document.getElementById("modal").style.display = "none";
-})
+});
 
 /*opens the instructional modal */
   let openModal = document.getElementById("open-modal");
@@ -229,24 +230,7 @@ chordIds.forEach(id => {
   });
 });
 
-/* gets chord and shape from create chord function
-get the note length from the notelength HTML 
-and triggers the sound */
-function triggerNote(note) {
-  let noteLengthObject = {
-    "1/1": "1n",  
-    "1/2": "2n",
-    "1/4": "4n",
-    "1/16": "16n"
-  }
- let selectedNoteLengthtoPlay = noteLengthObject[document.getElementById("select-note-length").textContent]
-   if (Tone.context.state != "running") {
-      Tone.start();
-    }
-   
-    synth.triggerAttackRelease(note, selectedNoteLengthtoPlay);
-  
-}
+
 
 /*An object containing the arrays that will map to the correct notes to be played  */
 const notes = {
@@ -306,7 +290,24 @@ function createChord(button) {
   
 }
 
-
+/* gets chord and shape from create chord function
+get the note length from the notelength HTML 
+and triggers the sound */
+function triggerNote(note) {
+  let noteLengthObject = {
+    "1/1": "1n",  
+    "1/2": "2n",
+    "1/4": "4n",
+    "1/16": "16n"
+  }
+ let selectedNoteLengthtoPlay = noteLengthObject[document.getElementById("select-note-length").textContent]
+   if (Tone.context.state != "running") {
+      Tone.start();
+    }
+   
+    synth.triggerAttackRelease(note, selectedNoteLengthtoPlay);
+  
+  }
 }
 
 
