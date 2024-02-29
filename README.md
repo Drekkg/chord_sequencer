@@ -159,7 +159,10 @@ Javascript was validated using JSHint. No errors were found.
 Their were a few warnings:
 - outer  variable referenced  in loop, which was mentioned in the course work as being acceptable.
 - Unknown variable 'Tone' which is in the third party library. 
+#### Accessibility
+The app was tested for accessibility using Lighthouse in Chrome Dev Tools. The app scored over 95% for accessibility.
 
+![screenshot of accessibility score](assets/images/light-house.png)
 #### Manual Testing 
 - The app was tested manually by clicking on the various buttons:
 - The note length selector button was tested by clicking on it and checking that the note length changed.
