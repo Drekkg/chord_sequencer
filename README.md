@@ -49,7 +49,7 @@ Diminished chords are light red.
 The selected mode is purple.
 
 
-## Wire Frame  
+### Wire Frame  
 The basic wireframe design.
 ![wireframe of chord sequencer](assets/images/wire-frame.png)
 
@@ -108,13 +108,41 @@ Each button changes colour according to the type of chord it represents. Major c
 
 ![screenshot of chord sequence section](assets/images/chord-sequence.png)
 
-#### Future Features
+### Future Features
 I demo'd the app a music teacher friend and some musician friends, who were quite enthused. They made a few suggestions that I would like to implement in the future.
 - A feature that allows the user to record and save chord progressions.
 - A loop feature that allows the user to loop a chord progression.
 - The ability to change the sounds triggered by the chords. To choose between a piano, guitar or synth sound. This is a feature high on my list as I think the sounds at the moment are a bit clangy and could be improved. A high quality piano sound would make the app a more professional tool.
 
+### Technologies Used
+Languages used:
+- HTML
+- CSS
+- Javascript
 
+Frameworks and Libraries:
+Tone.js
+Tone.js is a Web audio library for creating audio in the browser. A fantastic library that I only scratched the surface of. It has a lot of features that I would like to explore in the future. It was used to trigger the chords in the app.
+https://tonejs.github.io/
+created by Yotam Mann.
+
+### Testing
+Chord Sequencer was tested on a variety of real and virtual devices. Smartphones, tablets and desktops.
+#### Compatibility and Responsiveness
+The app was tested on the following browsers and devices:
+| TOOL / Device                 | BROWSER     | OS         | SCREEN WIDTH  |
+|-------------------------------|-------------|------------|---------------|
+| Real phone: S20 Ultra         | Chrome 120  | android 13 | M  412 x 915  |
+|             Hauwei p20        | Chrome 120  | android 11 | M  375 x 768  |
+| Real laptop asus              | Firefox 121 | linux pop  | LG1920x1080   | 
+| Dev tools emulator: pixel 7   | chrome 120  | android 13 | M  412 x 915  |
+|                     iPhone 12 | firefox 121 |  iOs 14    | M  428 x 926  |
+|           Samsung galaxy fold | Chrome 120  | android 12 | XS 280 x 653  |
+|           Samsung galaxy s8   | firefox 121 | android 8  |  S 360 x 740  |
+| Real tablet: samsung s6       | Chrome 118  | android 10 | L 1600 x 2560 |
+| Real computer:  windows pc    | IE Edge 88  | windows 10 | XL 1920 x 964 |
+
+Making this app responsive was a real challenge, but I think I did a good job. The app looks good on all devices and the buttons are easy to click. The app was tested on a variety of devices and browsers and it looks good and works well on all of them.
 
 
 
