@@ -70,6 +70,20 @@ On the main interface is a show modal button in the shape of a question mark. Cl
 
 ![screenshot of show modal](assets/images/show-modal.png)
 
+### Main Interface 
+The Main interface contains the core of the app. 
+Up and Down arrows to select the main key/root note. 
+Seven Mode selection buttons.
+Seven Chord Trigger buttons.
+One note length selctor button.
+The interactive elements in detail:
+![screenshot of the main interface](assets/images/main-interface.png)
+
+#### The Main Key Section
+![screenshot of main key](assets/images/main-key-section.png)
+The Main key Box displays the main key or root note. The display changes depending on the note chosen using the arrows.
+
+
 
 
 ## Bugs
