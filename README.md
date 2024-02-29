@@ -32,10 +32,34 @@ Example: A musician writing a song on their guitar or piano, have written a song
 - Create a useful tool
 - Progress my Javascript and overall skills
   
+## Design Choices
+Striving to make an uncluttered design with an app that has so many buttons on a single page turned out to be quite the challenge. 
+
+The chord buttons that sounds the chords are grouped togethor on mobile devices so that they are easy to click with your thumb.
+On bigger screens, I restricted the interface width so that the user doesn't have to move the from one side of the screen to the other to trigger sounds.
+I also tried to make easy to switch keys and modes, so the user quickly audition different keys and modes.
+
+### Colour Choice
+I used a variety of bright colours on the interface in an effort to make it look young and fun.
+They also serve a purpose and will help the user to quickly identify the different chord shapes.
+as follows:
+Major chords are green.
+Minor chords are blue.
+Diminished chords are light red.
+The selected mode is purple.
+
+
+## Wire Frame  
+The basic wireframe design.
+![wireframe of chord sequencer](assets/images/wire-frame.png)
+
+#Features
+
+
 
 
 ## Bugs
-Major hair pulling bug, where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. The bug was tracked down to event listeners being added in a for each loop each time key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTL changing the chord, key and mode to be played.  
+Major hair pulling bug, where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. The bug was tracked down to event listeners being added in a for each loop each time key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTML changing the chord, key and mode to be played.  
 
 
 
