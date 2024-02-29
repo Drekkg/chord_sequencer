@@ -144,7 +144,32 @@ The app was tested on the following browsers and devices:
 
 Making this app responsive was a real challenge, but I think I did a good job. The app looks good on all devices and the buttons are easy to click. The app was tested on a variety of devices and browsers and it looks good and works well on all of them.
 
+#### Validation
+HTML was validated using the W3C Nu HTML Markup Validation Service. No errors were found.
 
+![screenshot of HTML validation](assets/images/html-checker.png)
+
+CSS was validated using the W3C CSS Validation Service. No errors were found.
+
+![screenshot of CSS validation](assets/images/css-checker.png)
+
+Javascript was validated using JSHint. No errors were found.
+
+![screenshot of Javascript validation](assets/images/js-hint.png)
+Their were a few warnings:
+- outer  variable referenced  in loop, which was mentioned in the course work as being acceptable.
+- Unknown variable 'Tone' which is in the third party library. 
+
+#### Manual Testing 
+- The app was tested manually by clicking on the various buttons:
+- The note length selector button was tested by clicking on it and checking that the note length changed.
+- The up and down arrows were tested by clicking on them and checking that the main key changed.
+- The mode buttons were tested by clicking on them and checking that the mode changed.
+- Each mode was selected and tested to make sure the correct chords for the mode were displayed.
+- Each chord in the mode was also clicked to make sure it not only worked but also sounded the correct chord.
+- The show modal button was tested by clicking on it and checking that the modal opened.
+- The local storage was also tested by selcting a key and mode, closing the app and reopening to check the corrrect key and mode were displayed. Local storage for the modal was also erased in the browser settings and the app was opened to check that the modal opened on load.
+- Javascript was also disabled in the browser to check that the Javascript not enabled message was displayed.
 
 
 
