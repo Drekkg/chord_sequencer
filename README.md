@@ -126,6 +126,23 @@ Tone.js is a Web audio library for creating audio in the browser. A fantastic li
 https://tonejs.github.io/
 created by Yotam Mann.
 
+Other Technologies:
+- Git
+- GitHub
+- VS Code
+- Chrome Dev Tools
+- Balsamiq
+- W3C Nu HTML Markup Validation Service
+- Stack Overflow
+- Co Pilot - included with the GitHub student pack. I used it a bit for refactoring.
+- Gimp - for image editing.
+- Font Awesome - for the icons.
+- Google Fonts - for the font.
+- coolours.co - for the colour scheme.
+- JSHint - for Javascript validation.
+- W3C CSS Validation Service - for CSS validation.
+
+
 ### Testing
 Chord Sequencer was tested on a variety of real and virtual devices. Smartphones, tablets and desktops.
 #### Compatibility and Responsiveness
@@ -174,12 +191,10 @@ The app was tested for accessibility using Lighthouse in Chrome Dev Tools. The a
 - The local storage was also tested by selcting a key and mode, closing the app and reopening to check the corrrect key and mode were displayed. Local storage for the modal was also erased in the browser settings and the app was opened to check that the modal opened on load.
 - Javascript was also disabled in the browser to check that the Javascript not enabled message was displayed.
 
-
-
-
-
-## Bugs
-Major hair pulling bug, where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. The bug was tracked down to event listeners being added in a for each loop each time key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTML changing the chord, key and mode to be played.  
+### Bugs
+There were a lot of bugs during development that were fixed along the way. Stack Overflow was an invaluable resource in this regard. Also the js validator showed up a few errors on the first couple of passes.
+#### Major Bug
+A major hair pulling bug,was where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. Causing a cacophony. It was really tricky to track down the cause, because it would only happen after I changed the root note. The bug was eventually  tracked down to event listeners being added in a for each loop each time the key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTML changing the chord, key and mode to be played.  
 
 
 
