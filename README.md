@@ -108,6 +108,13 @@ Each button changes colour according to the type of chord it represents. Major c
 
 ![screenshot of chord sequence section](assets/images/chord-sequence.png)
 
+#### Future Features
+I demo'd the app a music teacher friend and some musician friends, who were quite enthused. They made a few suggestions that I would like to implement in the future.
+- A feature that allows the user to record and save chord progressions.
+- A loop feature that allows the user to loop a chord progression.
+- The ability to change the sounds triggered by the chords. To choose between a piano, guitar or synth sound. This is a feature high on my list as I think the sounds at the moment are a bit clangy and could be improved. A high quality piano sound would make the app a more professional tool.
+
+
 
 
 
