@@ -53,8 +53,22 @@ The selected mode is purple.
 The basic wireframe design.
 ![wireframe of chord sequencer](assets/images/wire-frame.png)
 
-#Features
+# Features
+Chord Sequencer has many interactive elements i.e buttons and two distinct "states".
+An instructional modal page and the main interface.
 
+### Modal Instructional Page
+The first is an instructional modal that opens when the app is first loaded.
+It contains brief instructions on how to use the app. It also contains a button to close the modal and show the user the main interface and a button to stop showing the modal on load and bring the user straight to the main interface.
+
+![screenshot of modal instructional modal](assets/images/modal-page.png)
+
+Once the user clicks on the stop showing button, it uses local storage to stop showing the modal next time the user opens the app.
+![screenshot of "Stop Showing" button](assets/images/stop-showing.png)
+
+On the main interface is a show modal button in the shape of a question mark. Clicking on this button brings the user back to the instructional modal.
+
+![screenshot of show modal](assets/images/show-modal.png)
 
 
 
