@@ -8,6 +8,9 @@ https://drekkg.github.io/chord_sequencer/
 # Repository
 https://github.com/Drekkg/chord_sequencer
 
+# Author
+Derek Garnett
+
 ## Who the Git is DerekIto?
 During a long train ride I did some work on this project using the company's laptop. I have been working in VS Code as a couple of months ago Codeanywhere stopped working. I initialised my repo on the command line and proceeded to push a few commits, five in total. I opened GitHub in my browser and was shocked to see that those five commits were attributed to a user called DerekIto - someone I don't know!
 Somehow my username and his got mixed up by GitHub - to be fair it was probably me, probably a typo when I entered my username on the command line. So just to clarify, as I have already clarified to student care - although my namesake is listed as a contributor with a total of five commits, the work is 100% mine(apart from Tone.js a third party library), all the commits in his name were actually made by me. 
