@@ -86,10 +86,18 @@ The Main key Box displays the main key or root note. The display changes dependi
 
 ![screenshot of main key box](assets/images/main-key-box.png)
 
-The Up and Down Arrows change the main key. The main key is displayed in the main key box. The main key is used to determine the chords in the mode. The arrows cycle through the notes. Clicking up all the way will bring you back to the starting point. The same applies to the down button. It is a user centric feature that allows the user to quickly audition different keys. 
+The Up and Down Arrows change the main key. The main key is displayed in the main key box. The main key is used to determine the chords in the mode. The arrows cycle through the notes. Clicking up all the way will bring you back to the starting point. The same applies to the down button. It is a user centric feature that allows the user to quickly audition different keys.
 
+![screenshot of up and down arrows](assets/images/up-down-arrows.png)
 
+The note length selector button is a feature that allows the user to change the length of the notes played by the chord buttons. The user can select from a whole note, half note, quarter note and an eighth note. Clicking on the button cycles through the different note lengths. 
 
+![screenshot of note length selector](assets/images/note-length-box.png)
+
+#### The Mode Section
+The mode section consists of seven buttons each representing the different modes. The modes are Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian. Each mode has a different flavour and a different arrangement of chords. Click here for a description of the different modes. https://www.productionmusiclive.com/blogs/news/musical-modes-and-their-emotions-characteristics-for-edm. The selected mode is highlighted in purple. The chords in the chord section will change to reflect the chords in the selected mode.
+
+![screenshot of mode section](assets/images/modes-section.png)
 ## Bugs
 Major hair pulling bug, where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. The bug was tracked down to event listeners being added in a for each loop each time key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTML changing the chord, key and mode to be played.  
 
