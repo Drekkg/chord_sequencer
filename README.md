@@ -81,8 +81,12 @@ The interactive elements in detail:
 
 #### The Main Key Section
 ![screenshot of main key](assets/images/main-key-section.png)
+
 The Main key Box displays the main key or root note. The display changes depending on the note chosen using the arrows.
 
+![screenshot of main key box](assets/images/main-key-box.png)
+
+The Up and Down Arrows change the main key. The main key is displayed in the main key box. The main key is used to determine the chords in the mode. The arrows cycle through the notes. Clicking up all the way will bring you back to the starting point. The same applies to the down button. It is a user centric feature that allows the user to quickly audition different keys. 
 
 
 
