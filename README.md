@@ -28,7 +28,10 @@ Chord Sequencer is aimed at songwriters, musicians and music students.
 
 Example: A musician writing a song on their guitar or piano, have written a song with two or maybe three chords and a basic melody, but they are stuck as to what they should play next. The chords they have at the moment - D Major, E Minor and G Major - sound nice and work well together. But the song sounds dull and uninspired - it’s missing something. The user opens the app and clicks on the main key selector tab and selects the key of D. They then select one of the modes - they select the first mode which is the Ionian mode. The seven coloured blocks below, then display the seven chords in the D Ionian mode: D Major - E Minor - F# Minor - G Major - A Major - B Minor - C# Diminished. The user notices that all three of the chords in their song are in the scale: D Major, E Minor and G Major. There are also four other Chords in the scale which should work in their song. The user then experiments adding the chords to their song, either on their own instrument or by auditioning it in the browser by clicking on the chord squares, which will sound the chords using an online synthesiser. By experimenting with different chords and modes, the user will discover a plethora of different chord flavours. The user will realise that the Chord Sequencer app is a beneficial aid in the creative process.
 
-
+## Develepor Goals
+- Create a useful tool
+- Progress my Javascript and overall skills
+  
 
 
 ## Bugs
