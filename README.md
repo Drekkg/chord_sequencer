@@ -98,6 +98,23 @@ The note length selector button is a feature that allows the user to change the 
 The mode section consists of seven buttons each representing the different modes. The modes are Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian. Each mode has a different flavour and a different arrangement of chords. Click here for a description of the different modes. https://www.productionmusiclive.com/blogs/news/musical-modes-and-their-emotions-characteristics-for-edm. The selected mode is highlighted in purple. The chords in the chord section will change to reflect the chords in the selected mode.
 
 ![screenshot of mode section](assets/images/modes-section.png)
+
+#### Local Storage
+The app uses local storage to store the user's last selected key and mode. When the user opens the app, the last selected key and mode are displayed. That way the user can pick up where they left off.
+
+#### The Chord Sequence Section
+The Chord Sequence Section is the main feature of the app. It consists of seven buttons each representing a chord in the selected mode. The chords are displayed in the order they appear in the mode.
+Each button changes colour according to the type of chord it represents. Major chords are green, minor chords are blue and diminished chords are light red. The user can click on the buttons to hear the how the chords sound and experiment with different chord progressions, or keep the same same progression only changing the mode or key.
+
+![screenshot of chord sequence section](assets/images/chord-sequence.png)
+
+
+
+
+
+
+
+
 ## Bugs
 Major hair pulling bug, where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. The bug was tracked down to event listeners being added in a for each loop each time key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTML changing the chord, key and mode to be played.  
 
