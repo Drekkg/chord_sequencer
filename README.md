@@ -37,11 +37,11 @@ Striving to make an uncluttered design with an app that has so many buttons on a
 
 The chord buttons that sounds the chords are grouped togethor on mobile devices so that they are easy to click with your thumb.
 On bigger screens, I restricted the interface width so that the user doesn't have to move the from one side of the screen to the other to trigger sounds.
-I also tried to make easy to switch keys and modes, so the user quickly audition different keys and modes.
+I also tried to make it easy to switch keys and modes, so the user can quickly audition different keys and modes.
 
 ### Colour Choice
 I used a variety of bright colours on the interface in an effort to make it look young and fun.
-They also serve a purpose and will help the user to quickly identify the different chord shapes.
+They also serve a purpose, and will help the user to quickly identify the different chord shapes.
 as follows:
 Major chords are green.
 Minor chords are blue.
@@ -109,10 +109,10 @@ Each button changes colour according to the type of chord it represents. Major c
 ![screenshot of chord sequence section](assets/images/chord-sequence.png)
 
 ### Future Features
-I demo'd the app a music teacher friend and some musician friends, who were quite enthused. They made a few suggestions that I would like to implement in the future.
+I demo'd the app to a music teacher friend and some musician friends, who were quite enthused. They made a few suggestions that I would like to implement in the future.
 - A feature that allows the user to record and save chord progressions.
 - A loop feature that allows the user to loop a chord progression.
-- The ability to change the sounds triggered by the chords. To choose between a piano, guitar or synth sound. This is a feature high on my list as I think the sounds at the moment are a bit clangy and could be improved. A high quality piano sound would make the app a more professional tool.
+- The ability to change the sounds triggered by the chords. To choose between a piano, guitar or synth sound. This is a feature high on my list as I think the sounds at the moment could be improved. A high quality piano sound would make the app a more professional tool.
 
 ### Technologies Used
 Languages used:
@@ -159,7 +159,7 @@ The app was tested on the following browsers and devices:
 | Real tablet: samsung s6       | Chrome 118  | android 10 | L 1600 x 2560 |
 | Real computer:  windows pc    | IE Edge 88  | windows 10 | XL 1920 x 964 |
 
-Making this app responsive was a real challenge, but I think I did a good job. The app looks good on all devices and the buttons are easy to click. The app was tested on a variety of devices and browsers and it looks good and works well on all of them.
+Making this app responsive was a real challenge. The app looks good on all devices and the buttons are easy to click. The app was tested on a variety of devices and browsers and it looks good and works well on all of them.
 
 #### Validation
 HTML was validated using the W3C Nu HTML Markup Validation Service. No errors were found.
@@ -197,7 +197,37 @@ There were a lot of bugs during development that were fixed along the way. Stack
 A major hair pulling bug,was where multiple event listeners were being added to a single button. Which caused a single chord button to trigger multiple notes from different keys. Causing a cacophony. It was really tricky to track down the cause, because it would only happen after I changed the root note. The bug was eventually  tracked down to event listeners being added in a for each loop each time the key or mode was changed. The fix was to change the order, first create the event listeners and then have the event listener call a function that parses the inner HTML changing the chord, key and mode to be played.  
 
 
+## Deployment
+__Deployment on GitHub using GitHub Pages__
+- From the GitHub dashboard, click on Repositories.  
+![screenshot of repo](assets/images/image.png)
+- Select and click on the repo you want to deploy.
 
+![Screenshot repo list](assets/images/repo.png)
+- Click on settings.
+
+![screenshot settings](assets/images/settings.png)
+- On the left hand side scroll and click on Pages.
+
+![screenshot pages](assets/images/pages.png)
+- Make sure "Source" is set to "Deploy from branch".
+- On "Branch" Select "Main". Make sure the selected folder is set to "/root".
+- Click Save.
+- Go back to your repository.
+- Scroll down and on the right hand side and click on Deployments.
+
+![Screenshot of deployments](assets/images/deployed-page.png) 
+- Under the heading "Active Deployments" you will find a link to your deployed site.
+
+- Copy and paste the link in a browser to view your live site.
+
+
+## Credits
+- Malia Havlicek - My mentor at Code Institute. 
+- Love Maths - I got some idea from the Love Maths project. Especially reading inner HTML and using it to trigger events.
+- Tone.js - A great resource
+- Yotam Mann - The creator of Tone.js
+- Stack Overflow
 
 
 
