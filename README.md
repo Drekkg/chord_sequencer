@@ -121,7 +121,6 @@ Languages used:
 - Javascript
 
 Frameworks and Libraries:
-Tone.js
 Tone.js is a Web audio library for creating audio in the browser. A fantastic library that I only scratched the surface of. It has a lot of features that I would like to explore in the future. It was used to trigger the chords in the app.
 https://tonejs.github.io/
 created by Yotam Mann.
