@@ -276,16 +276,21 @@ button {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: .6rem;
+    
 }
-.chord-boxes > button {
+
+.chord-boxes > div > h3 + button {
     width: 7.5rem;
-    Margin: .6rem 0.4rem;
+    Margin: .2rem 0.4rem .6rem 0.4rem;
     font-size: 1.8rem;
-    background-color: rgb(87, 147, 76);
     padding: 0.3rem;
     border-radius: 10%;
     border: .1rem solid black;
     color: #2b2d42;
+}
+.chord-boxes > div {
+    font-size: .7rem;
 }
 button.maj{
     background-color:#8AC926;
@@ -300,7 +305,7 @@ button.dom{
     background-color: rgb(76, 136, 147);
 }
 
-.chord-boxes > button:hover {
+.chord-boxes > div > button:hover {
     background-color: #FFCA3A;
 }
 
@@ -378,6 +383,15 @@ button.dom{
 }
 .heading {
     margin-top: 1.2rem;
+}
+
+.chord-boxes{   
+    margin-top: 1rem;
+}
+.chord-boxes > div {
+   
+    margin-top: .6rem;
+    
 }
 }
  
