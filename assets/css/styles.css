@@ -293,16 +293,16 @@ button {
     font-size: .7rem;
 }
 button.maj{
-    background-color:#8AC926;
+    background-color:#c8cac5;
 }
  button.min{
-    background-color: #1982C4;
+    background-color: #bdc0c2;
 }
 button.dim{
-    background-color: #FF595E;
+    background-color: #bbb2b3;
 }
 button.dom{
-    background-color: rgb(76, 136, 147);
+    background-color: rgb(118, 126, 127);
 }
 
 .chord-boxes > div > button:hover {
