@@ -269,7 +269,7 @@ button {
 .mode-button:hover {
     background-color: #6A4C93;
 }
-
+ 
 /* Chord shape boxes styles */
 .chord-boxes{
     display: flex;
@@ -283,7 +283,7 @@ button {
 .chord-boxes > div > h3 + button {
     width: 7.5rem;
     Margin: .2rem 0.4rem .6rem 0.4rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding: 0.3rem;
     border-radius: 10%;
     border: .1rem solid black;
