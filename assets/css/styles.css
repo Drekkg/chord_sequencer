@@ -85,7 +85,7 @@ box-shadow: 0 0 0.5rem rgba(184, 146, 146, 0.5);
   .rule-number {
       /* green circle with white text */
       background-color: rgb(77, 118, 65);
-      color:#2b2d42;
+      color:#e0e0e1;
       border-radius: 50%;
       width: 1.5rem;
       height: 1.5rem;
