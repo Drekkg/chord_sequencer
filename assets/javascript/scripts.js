@@ -347,7 +347,7 @@ function synth() {
   };
 
   /*Gets the chord name and shape from the clicked button
-gets rif of the # and adds the chord shape 
+gets rid of the # and adds the chord shape 
 sends the chord and shape to be triggered to the triggerNote function  */
   function createChord(button) {
     let chordName = button.innerHTML.toLowerCase().slice(0, 3);
